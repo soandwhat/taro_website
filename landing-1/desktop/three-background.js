@@ -62,7 +62,13 @@ class ThreeBackground {
         });
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+        // Color space - with fallback for older Three.js versions
+        if (THREE.SRGBColorSpace !== undefined) {
+            this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+        } else if (this.renderer.outputEncoding !== undefined) {
+            this.renderer.outputEncoding = THREE.sRGBEncoding;
+        }
 
         this.container.appendChild(this.renderer.domElement);
 
@@ -81,6 +87,11 @@ class ThreeBackground {
         // Start animation
         this.clock = new THREE.Clock();
         this.animate();
+
+        // Show container after a small delay
+        setTimeout(() => {
+            this.container.style.opacity = '1';
+        }, 100);
     }
 
     createStars() {
@@ -111,11 +122,21 @@ class ThreeBackground {
         const geometry = new THREE.PlaneGeometry(0.35, 0.55);
 
         const textureLoader = new THREE.TextureLoader();
-        const texture = textureLoader.load('card.webp', () => {
-            // Show background when loaded
-            this.container.style.opacity = '1';
-        });
-        texture.colorSpace = THREE.SRGBColorSpace;
+        const texture = textureLoader.load('card.webp',
+            // Success callback
+            (tex) => {
+                console.log('✅ Card texture loaded');
+                if (THREE.SRGBColorSpace !== undefined) {
+                    tex.colorSpace = THREE.SRGBColorSpace;
+                }
+            },
+            // Progress callback
+            undefined,
+            // Error callback
+            (err) => {
+                console.warn('⚠️ Card texture failed to load:', err);
+            }
+        );
 
         const material = new THREE.MeshBasicMaterial({
             map: texture,
@@ -124,8 +145,7 @@ class ThreeBackground {
             opacity: 0.95,
             color: 0xffffff,
             depthWrite: false,
-            depthTest: true,
-            toneMapped: false
+            depthTest: true
         });
 
         this.cardMesh = new THREE.InstancedMesh(geometry, material, this.cardCount);
@@ -158,34 +178,56 @@ class ThreeBackground {
 
     createMainObject() {
         const textureLoader = new THREE.TextureLoader();
+        const self = this;
 
-        textureLoader.load('girl.webp', (texture) => {
-            texture.colorSpace = THREE.SRGBColorSpace;
+        console.log('🔄 Loading girl.webp texture...');
 
-            const aspect = texture.image.width / texture.image.height;
-            const config = this.getResponsiveConfig();
+        textureLoader.load(
+            'girl.webp',
+            // Success callback
+            function(texture) {
+                console.log('✅ Girl texture loaded successfully!');
 
-            const geometry = new THREE.PlaneGeometry(
-                config.scale * aspect,
-                config.scale
-            );
+                // Color space with fallback
+                if (THREE.SRGBColorSpace !== undefined) {
+                    texture.colorSpace = THREE.SRGBColorSpace;
+                }
 
-            const material = new THREE.MeshBasicMaterial({
-                map: texture,
-                transparent: true,
-                side: THREE.DoubleSide,
-                depthTest: true,
-                depthWrite: false,
-                color: 0xffffff,
-                toneMapped: false
-            });
+                const aspect = texture.image.width / texture.image.height;
+                const config = self.getResponsiveConfig();
 
-            this.mainObject = new THREE.Mesh(geometry, material);
-            this.mainObject.position.y = config.yOffset;
-            this.mainObject.position.z = 0;
+                console.log('📐 Creating mesh with scale:', config.scale, 'aspect:', aspect);
 
-            this.scene.add(this.mainObject);
-        });
+                const geometry = new THREE.PlaneGeometry(
+                    config.scale * aspect,
+                    config.scale
+                );
+
+                const material = new THREE.MeshBasicMaterial({
+                    map: texture,
+                    transparent: true,
+                    side: THREE.DoubleSide,
+                    depthTest: true,
+                    depthWrite: false,
+                    color: 0xffffff
+                });
+
+                self.mainObject = new THREE.Mesh(geometry, material);
+                self.mainObject.position.y = config.yOffset;
+                self.mainObject.position.z = 0;
+
+                self.scene.add(self.mainObject);
+                console.log('✅ Main object added to scene!');
+            },
+            // Progress callback
+            function(xhr) {
+                console.log('📊 Loading progress:', (xhr.loaded / xhr.total * 100) + '%');
+            },
+            // Error callback
+            function(error) {
+                console.error('❌ Error loading girl.webp:', error);
+            }
+        );
     }
 
     getResponsiveConfig() {

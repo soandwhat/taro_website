@@ -116,6 +116,8 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .nav-links {
@@ -231,7 +233,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 5vh 20px 12vh;
+    padding: 100px 20px 12vh;
     pointer-events: none;
 }
 
