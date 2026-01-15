@@ -240,8 +240,8 @@ class ThreeBackground {
         const isLandscapeMobile = width > height && height < 500;
         const isMobile = width < 768;
 
-        let scale = 3.8;  // Desktop
-        let yOffset = 0;
+        let scale = 2.8;  // Desktop - reduced to fit between header and CTA
+        let yOffset = -0.4;  // Shifted down to center between header and CTA
 
         if (isLandscapeMobile) {
             scale = 2.5;
