@@ -122,7 +122,9 @@ class ThreeBackground {
         const geometry = new THREE.PlaneGeometry(0.35, 0.55);
 
         const textureLoader = new THREE.TextureLoader();
-        const texture = textureLoader.load('card.webp',
+        // Use base64 data to avoid CORS issues
+        const textureSource = typeof CARD_IMAGE_BASE64 !== 'undefined' ? CARD_IMAGE_BASE64 : 'card.webp';
+        const texture = textureLoader.load(textureSource,
             // Success callback
             (tex) => {
                 console.log('✅ Card texture loaded');
@@ -182,8 +184,10 @@ class ThreeBackground {
 
         console.log('🔄 Loading girl.webp texture...');
 
+        // Use base64 data to avoid CORS issues
+        const textureSource = typeof GIRL_IMAGE_BASE64 !== 'undefined' ? GIRL_IMAGE_BASE64 : 'girl.webp';
         textureLoader.load(
-            'girl.webp',
+            textureSource,
             // Success callback
             function(texture) {
                 console.log('✅ Girl texture loaded successfully!');
