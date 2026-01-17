@@ -36,7 +36,7 @@
     --shadow-btn: 0 10px 30px rgba(232, 67, 147, 0.5);
 
     /* Відступи */
-    --section-padding: 100px 0;
+    --section-padding: 35px 0;
     --container-padding: 0 20px;
 }
 
@@ -582,7 +582,7 @@ body {
    ======================================== */
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 .section-badge {
@@ -623,10 +623,10 @@ body {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 .about-image {
@@ -730,6 +730,166 @@ body {
     border-radius: 50%;
     animation: pulse-aura 3s ease-in-out infinite;
     z-index: -1;
+}
+
+/* About Photo Styles */
+.about-photo-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-frame {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 2px solid var(--accent);
+    box-shadow:
+        0 0 30px rgba(253, 121, 168, 0.3),
+        0 0 60px rgba(253, 121, 168, 0.1),
+        inset 0 0 30px rgba(253, 121, 168, 0.05);
+    transition: all 0.5s ease;
+    animation: float-photo 6s ease-in-out infinite;
+}
+
+.photo-frame::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(253, 121, 168, 0.1) 50%,
+        transparent 70%
+    );
+    animation: shine 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.photo-frame:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 50px rgba(253, 121, 168, 0.5),
+        0 0 100px rgba(253, 121, 168, 0.2),
+        inset 0 0 30px rgba(253, 121, 168, 0.1);
+    border-color: var(--white);
+}
+
+.about-photo {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    display: block;
+    filter: contrast(1.05) saturate(1.1);
+    transition: all 0.5s ease;
+}
+
+.photo-frame:hover .about-photo {
+    filter: contrast(1.1) saturate(1.2) brightness(1.05);
+}
+
+.photo-decoration {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.photo-decoration-1 {
+    width: 120px;
+    height: 120px;
+    background: var(--gradient-accent);
+    top: -30px;
+    right: -30px;
+    opacity: 0.3;
+    filter: blur(30px);
+    animation: float-decoration 8s ease-in-out infinite;
+}
+
+.photo-decoration-2 {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    bottom: -20px;
+    left: -20px;
+    opacity: 0.3;
+    filter: blur(20px);
+    animation: float-decoration 6s ease-in-out infinite reverse;
+}
+
+.photo-sparkles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.photo-sparkles .sparkle {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: sparkle-float 3s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.photo-sparkles .sparkle:nth-child(1) {
+    top: 10%;
+    right: -10%;
+    animation-delay: 0s;
+}
+
+.photo-sparkles .sparkle:nth-child(2) {
+    bottom: 20%;
+    left: -10%;
+    animation-delay: 1s;
+}
+
+.photo-sparkles .sparkle:nth-child(3) {
+    top: 50%;
+    right: -15%;
+    animation-delay: 2s;
+}
+
+@keyframes float-photo {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(1deg);
+    }
+}
+
+@keyframes shine {
+    0%, 100% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    50% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+@keyframes float-decoration {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(10px, -10px) scale(1.1);
+    }
+}
+
+@keyframes sparkle-float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-10px) scale(1.2);
+        opacity: 1;
+    }
 }
 
 .about-text {
@@ -1147,7 +1307,7 @@ body {
 }
 
 .reviews-trust {
-    margin-top: 60px;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -1176,20 +1336,20 @@ body {
 .contact-content {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    gap: 60px;
-    margin-top: 40px;
+    gap: 40px;
+    margin-top: 25px;
 }
 
 .contact-form-wrapper {
     background: var(--bg-card);
-    padding: 40px;
+    padding: 30px 35px;
     border-radius: 30px;
     border: 1px solid var(--border-glass);
     backdrop-filter: blur(10px);
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
