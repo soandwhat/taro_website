@@ -1,41 +1,61 @@
 // ========================================
-// Mobile Version - Таро у Тапочках
+// ТАРО У ТАПОЧКАХ - Mobile Version JS
 // ========================================
 
-// Configuration - ВАЖЛИВО: Замініть на реальні дані!
+// Configuration
 const CONFIG = {
-    telegram: '@your_username',
-    whatsapp: '380XXXXXXXXX',
-    viber: '380XXXXXXXXX',
+    telegram: 'taroutapockah',
+    whatsapp: '380633895103',
+    viber: '380633895103',
     email: 'your.email@example.com'
 };
 
 // ========================================
+// Swiper (Reviews Slider) Initialization
+// ========================================
+function initSwiper() {
+    if (typeof Swiper !== 'undefined') {
+        new Swiper('.reviewsSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 24,
+                }
+            }
+        });
+    }
+}
+
+// ========================================
 // Messenger Links Setup
 // ========================================
-
 function setupMessengerLinks() {
     // Telegram
-    const telegramLinks = document.querySelectorAll(
-        '#telegramQuick, #telegramBar'
-    );
+    const telegramLinks = document.querySelectorAll('#telegramContact');
     telegramLinks.forEach(link => {
-        link.href = `https://t.me/${CONFIG.telegram.replace('@', '')}`;
+        link.href = `https://t.me/${CONFIG.telegram}`;
     });
 
     // WhatsApp
-    const whatsappLinks = document.querySelectorAll(
-        '#whatsappQuick, #whatsappBar'
-    );
+    const whatsappLinks = document.querySelectorAll('#whatsappContact');
     whatsappLinks.forEach(link => {
         const message = encodeURIComponent('Вітаю! Хочу замовити розклад таро.');
         link.href = `https://wa.me/${CONFIG.whatsapp}?text=${message}`;
     });
 
     // Viber
-    const viberLinks = document.querySelectorAll(
-        '#viberQuick, #viberBar'
-    );
+    const viberLinks = document.querySelectorAll('#viberContact');
     viberLinks.forEach(link => {
         link.href = `viber://chat?number=%2B${CONFIG.viber}`;
     });
@@ -44,7 +64,6 @@ function setupMessengerLinks() {
 // ========================================
 // Contact Form Handling
 // ========================================
-
 function setupContactForm() {
     const form = document.getElementById('contactForm');
     const successMessage = document.getElementById('formSuccess');
@@ -64,8 +83,8 @@ function setupContactForm() {
         }
 
         const submitButton = form.querySelector('button[type="submit"]');
-        const originalButtonText = submitButton.textContent;
-        submitButton.textContent = 'Відправка...';
+        const originalButtonHTML = submitButton.innerHTML;
+        submitButton.innerHTML = 'Відправка...';
         submitButton.disabled = true;
 
         try {
@@ -73,9 +92,6 @@ function setupContactForm() {
 
             successMessage.classList.add('show');
             form.reset();
-
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
             setTimeout(() => {
                 successMessage.classList.remove('show');
@@ -85,7 +101,7 @@ function setupContactForm() {
             console.error('Помилка відправки форми:', error);
             alert('Виникла помилка при відправці форми. Будь ласка, зв\'яжіться зі мною через месенджери.');
         } finally {
-            submitButton.textContent = originalButtonText;
+            submitButton.innerHTML = originalButtonHTML;
             submitButton.disabled = false;
         }
     });
@@ -94,90 +110,91 @@ function setupContactForm() {
 // ========================================
 // Form Validation
 // ========================================
-
 function validateForm(data) {
     if (data.name.trim().length < 2) {
-        showError('Будь ласка, введіть ваше ім\'я (мінімум 2 символи)');
+        showAlert('Будь ласка, введіть ваше ім\'я (мінімум 2 символи)', 'error');
         return false;
     }
 
     const phoneRegex = /^[\d\s\+\-\(\)]+$/;
     if (!phoneRegex.test(data.phone) || data.phone.length < 10) {
-        showError('Будь ласка, введіть коректний номер телефону');
+        showAlert('Будь ласка, введіть коректний номер телефону', 'error');
         return false;
     }
 
     if (!data.service) {
-        showError('Будь ласка, оберіть послугу');
+        showAlert('Будь ласка, оберіть послугу', 'error');
         return false;
     }
 
     return true;
 }
 
-function showError(message) {
-    alert(message);
-}
-
 // ========================================
 // Send Form Data
 // ========================================
-
 async function sendFormData(data) {
-    // Telegram Bot Integration
-    const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN';
-    const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID';
+    // Создаем FormData для отправки на PHP
+    const formData = new FormData();
+    formData.append('name', data.name);
+    formData.append('phone', data.phone);
+    formData.append('service', data.service);
+    formData.append('message', data.message || '');
+    formData.append('landing', 'Landing 1 (Mobile)');
 
-    const message = `
-🔮 Нова заявка з мобільного сайту "Таро у Тапочках"
-
-👤 Ім'я: ${data.name}
-📱 Телефон: ${data.phone}
-🎯 Послуга: ${getServiceName(data.service)}
-💬 Повідомлення: ${data.message || 'Немає'}
-
-📅 Дата: ${new Date().toLocaleString('uk-UA')}
-📱 Пристрій: Mobile
-    `.trim();
-
-    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-
-    const response = await fetch(url, {
+    const response = await fetch('../desktop/send-form.php', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            chat_id: TELEGRAM_CHAT_ID,
-            text: message
-        })
+        body: formData
     });
 
-    if (!response.ok) {
-        throw new Error('Помилка відправки в Telegram');
+    const result = await response.json();
+
+    if (result.error) {
+        throw new Error(result.error);
     }
+
+    if (!result.success) {
+        throw new Error('Помилка відправки форми');
+    }
+
+    return result;
 }
 
 // ========================================
 // Helper Functions
 // ========================================
+function showAlert(message, type = 'info') {
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `custom-alert alert-${type}`;
+    alertDiv.textContent = message;
+    alertDiv.style.cssText = `
+        position: fixed;
+        top: 80px;
+        left: 16px;
+        right: 16px;
+        background: ${type === 'error' ? '#f44336' : '#4CAF50'};
+        color: white;
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 10000;
+        animation: slideDown 0.3s ease;
+        font-weight: 600;
+    `;
 
-function getServiceName(serviceValue) {
-    const services = {
-        'diagnosis': 'Повна діагностика - 500 грн',
-        'protection': 'Захист - 1 500 грн',
-        'wax': 'Чистка воском - від 3 000 грн',
-        'candles': 'Віджиг свічками - від 3 000 грн',
-        'lead': 'Чистка свинцем - від 13 000 грн',
-        'ritual': 'Ритуали - від 2 500 грн'
-    };
-    return services[serviceValue] || serviceValue;
+    document.body.appendChild(alertDiv);
+
+    setTimeout(() => {
+        alertDiv.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => {
+            document.body.removeChild(alertDiv);
+        }, 300);
+    }, 3000);
 }
 
 // ========================================
 // Phone Input Formatting
 // ========================================
-
 function setupPhoneFormatting() {
     const phoneInput = document.getElementById('phone');
 
@@ -224,20 +241,14 @@ function setupPhoneFormatting() {
 // ========================================
 // Smooth Scroll
 // ========================================
-
 function setupSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-
             e.preventDefault();
-            const target = document.querySelector(href);
-
+            const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const offset = 20;
-                const targetPosition = target.offsetTop - offset;
-
+                const headerHeight = 64; // mobile header height
+                const targetPosition = target.offsetTop - headerHeight;
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -248,72 +259,53 @@ function setupSmoothScroll() {
 }
 
 // ========================================
-// Hide Messenger Bar on Scroll Down
+// FAQ Accordion
 // ========================================
+function initFaqAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
 
-function setupMessengerBarBehavior() {
-    let lastScrollTop = 0;
-    const messengerBar = document.querySelector('.messenger-bar');
-    let ticking = false;
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
 
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            window.requestAnimationFrame(function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                // Show/hide based on scroll direction
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // Scrolling down
-                    messengerBar.style.transform = 'translateY(100%)';
-                } else {
-                    // Scrolling up
-                    messengerBar.style.transform = 'translateY(0)';
+        question.addEventListener('click', function() {
+            // Закриваємо інші елементи
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
                 }
-
-                lastScrollTop = scrollTop;
-                ticking = false;
             });
 
-            ticking = true;
-        }
-    });
-
-    // Add transition
-    messengerBar.style.transition = 'transform 0.3s ease-in-out';
-}
-
-// ========================================
-// Prevent iOS Safari Bounce on Form Focus
-// ========================================
-
-function preventBounce() {
-    let isScrolling = false;
-
-    document.addEventListener('touchstart', function() {
-        isScrolling = true;
-    });
-
-    document.addEventListener('touchend', function() {
-        setTimeout(() => {
-            isScrolling = false;
-        }, 100);
-    });
-
-    // Prevent bounce when focusing on inputs
-    const inputs = document.querySelectorAll('input, select, textarea');
-    inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            if (!isScrolling) {
-                this.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
+            // Переключаємо поточний
+            item.classList.toggle('active');
         });
     });
 }
 
 // ========================================
-// Analytics
+// Back to Top Button
 // ========================================
+function initBackToTop() {
+    const backToTop = document.getElementById('backToTop');
 
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// ========================================
+// Analytics Tracking
+// ========================================
 function trackEvent(eventName, eventData = {}) {
     // Google Analytics
     if (typeof gtag !== 'undefined') {
@@ -330,15 +322,15 @@ function trackEvent(eventName, eventData = {}) {
 
 function setupAnalytics() {
     // Track messenger clicks
-    document.querySelectorAll('.quick-btn, .messenger-bar-btn').forEach(btn => {
+    document.querySelectorAll('.messenger-btn, .tiktok-link').forEach(btn => {
         btn.addEventListener('click', function() {
             const messenger = this.classList.contains('telegram') ? 'Telegram' :
                             this.classList.contains('whatsapp') ? 'WhatsApp' :
-                            this.classList.contains('viber') ? 'Viber' : 'Unknown';
+                            this.classList.contains('viber') ? 'Viber' : 'TikTok';
 
             trackEvent('messenger_click', {
                 messenger: messenger,
-                location: this.classList.contains('quick-btn') ? 'hero' : 'sticky_bar'
+                device: 'mobile'
             });
         });
     });
@@ -346,7 +338,9 @@ function setupAnalytics() {
     // Track form submission
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', function() {
+        const service = document.getElementById('service').value;
         trackEvent('form_submit', {
+            service: service,
             device: 'mobile'
         });
     });
@@ -356,96 +350,78 @@ function setupAnalytics() {
         btn.addEventListener('click', function() {
             const serviceTitle = this.closest('.service-card').querySelector('.service-title').textContent;
             trackEvent('service_interest', {
-                service: serviceTitle
+                service: serviceTitle,
+                device: 'mobile'
             });
+        });
+    });
+
+    // Track scroll depth
+    let scrollTracked = {
+        25: false,
+        50: false,
+        75: false,
+        100: false
+    };
+
+    window.addEventListener('scroll', () => {
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+        Object.keys(scrollTracked).forEach(depth => {
+            if (scrollPercent >= depth && !scrollTracked[depth]) {
+                scrollTracked[depth] = true;
+                trackEvent('scroll_depth', {
+                    depth: `${depth}%`,
+                    device: 'mobile'
+                });
+            }
         });
     });
 }
 
 // ========================================
-// Detect if running in standalone mode (PWA)
+// Dynamic CSS Animations
 // ========================================
-
-function detectStandaloneMode() {
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches ||
-                        window.navigator.standalone ||
-                        document.referrer.includes('android-app://');
-
-    if (isStandalone) {
-        console.log('📱 Running in standalone mode (PWA)');
-        document.body.classList.add('standalone-mode');
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideOut {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
     }
-}
+`;
+document.head.appendChild(style);
 
 // ========================================
-// Initialize
+// Initialize Everything on DOM Load
 // ========================================
-
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('🔮 Таро у Тапочках (Mobile) - Ініціалізація...');
+
+    // Initialize all features
+    initSwiper();
+    initFaqAccordion();
+    initBackToTop();
     setupMessengerLinks();
     setupContactForm();
     setupPhoneFormatting();
     setupSmoothScroll();
-    setupMessengerBarBehavior();
-    preventBounce();
     setupAnalytics();
-    detectStandaloneMode();
 
-    console.log('✅ Таро у Тапочках - Mobile Landing готовий!');
-    console.log('⚠️ ВАЖЛИВО: Замініть конфігурацію в script.js на реальні дані!');
+    console.log('✅ Таро у Тапочках (Mobile) - Все готово!');
 });
 
 // ========================================
-// Performance Monitoring
+// Export for Testing
 // ========================================
-
-window.addEventListener('load', function() {
-    if ('performance' in window) {
-        const perfData = window.performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`⚡ Page load time: ${pageLoadTime}ms`);
-
-        trackEvent('page_performance', {
-            load_time: pageLoadTime,
-            device: 'mobile'
-        });
-    }
-});
-
-// ========================================
-// Error Handling
-// ========================================
-
-window.addEventListener('error', function(e) {
-    console.error('❌ Error:', e.error);
-    trackEvent('javascript_error', {
-        message: e.error?.message || 'Unknown error',
-        device: 'mobile'
-    });
-});
-
-// ========================================
-// Orientation Change Handler
-// ========================================
-
-window.addEventListener('orientationchange', function() {
-    console.log('📱 Orientation changed to:', window.orientation);
-
-    // Optionally reload or adjust layout
-    setTimeout(() => {
-        window.scrollTo(0, window.scrollY + 1);
-        window.scrollTo(0, window.scrollY - 1);
-    }, 100);
-});
-
-// ========================================
-// Export for testing
-// ========================================
-
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         validateForm,
-        getServiceName,
         CONFIG
     };
 }
