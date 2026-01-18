@@ -1,5 +1,5 @@
 // ========================================
-// ТАРО У ТАПОЧКАХ - Mobile Version JS
+// ТАРО У ТАПОЧКАХ - Main JavaScript
 // ========================================
 
 // Configuration
@@ -7,8 +7,41 @@ const CONFIG = {
     telegram: 'taroutapockah',
     whatsapp: '380633895103',
     viber: '380633895103',
-    email: 'your.email@example.com'
+    email: 'your.email@example.com',
+    telegram_bot_token: 'YOUR_BOT_TOKEN',
+    telegram_chat_id: 'YOUR_CHAT_ID'
 };
+
+// ========================================
+// Three.js Background Initialization
+// ========================================
+function initThree() {
+    // ThreeBackground class is loaded from three-background.js
+    if (typeof initThreeBackground === 'function') {
+        initThreeBackground();
+        console.log('🌟 Three.js background initialized');
+    } else if (typeof ThreeBackground !== 'undefined') {
+        new ThreeBackground();
+        console.log('🌟 Three.js background initialized (direct)');
+    } else {
+        console.warn('⚠️ Three.js background not available');
+    }
+}
+
+// ========================================
+// AOS (Animate On Scroll) Initialization
+// ========================================
+function initAOS() {
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100,
+            delay: 100
+        });
+    }
+}
 
 // ========================================
 // Swiper (Reviews Slider) Initialization
@@ -17,20 +50,29 @@ function initSwiper() {
     if (typeof Swiper !== 'undefined') {
         new Swiper('.reviewsSwiper', {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 30,
             loop: true,
             autoplay: {
-                delay: 4000,
+                delay: 5000,
                 disableOnInteraction: false,
             },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
             breakpoints: {
                 640: {
-                    slidesPerView: 1.2,
-                    spaceBetween: 24,
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 2,
                 }
             }
         });
@@ -38,24 +80,139 @@ function initSwiper() {
 }
 
 // ========================================
+// Animated Counter for Stats
+// ========================================
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const targetValue = +target.getAttribute('data-count');
+                let currentValue = 0;
+
+                const increment = targetValue / speed;
+
+                const updateCounter = () => {
+                    currentValue += increment;
+                    if (currentValue < targetValue) {
+                        target.textContent = Math.ceil(currentValue);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        target.textContent = targetValue;
+                    }
+                };
+
+                updateCounter();
+                observer.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+}
+
+// ========================================
+// Navbar Scroll Effect
+// ========================================
+function initNavbar() {
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
+
+// ========================================
+// Back to Top Button
+// ========================================
+function initBackToTop() {
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// ========================================
+// Modal for Review Images
+// ========================================
+function initReviewModal() {
+    const modal = document.getElementById('reviewModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const viewBtns = document.querySelectorAll('.view-full-btn');
+
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const reviewCard = btn.closest('.review-card');
+            const reviewImage = reviewCard.querySelector('.review-image');
+            modalImage.src = reviewImage.src;
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeModal = () => {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    };
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+}
+
+// ========================================
 // Messenger Links Setup
 // ========================================
 function setupMessengerLinks() {
     // Telegram
-    const telegramLinks = document.querySelectorAll('#telegramContact');
+    const telegramLinks = document.querySelectorAll(
+        '#telegramBtn, #telegramContact, #telegramFooter'
+    );
     telegramLinks.forEach(link => {
-        link.href = `https://t.me/${CONFIG.telegram}`;
+        link.href = `https://t.me/${CONFIG.telegram.replace('@', '')}`;
     });
 
     // WhatsApp
-    const whatsappLinks = document.querySelectorAll('#whatsappContact');
+    const whatsappLinks = document.querySelectorAll(
+        '#whatsappBtn, #whatsappContact, #whatsappFooter'
+    );
     whatsappLinks.forEach(link => {
         const message = encodeURIComponent('Вітаю! Хочу замовити розклад таро.');
         link.href = `https://wa.me/${CONFIG.whatsapp}?text=${message}`;
     });
 
     // Viber
-    const viberLinks = document.querySelectorAll('#viberContact');
+    const viberLinks = document.querySelectorAll(
+        '#viberBtn, #viberContact, #viberFooter'
+    );
     viberLinks.forEach(link => {
         link.href = `viber://chat?number=%2B${CONFIG.viber}`;
     });
@@ -84,7 +241,7 @@ function setupContactForm() {
 
         const submitButton = form.querySelector('button[type="submit"]');
         const originalButtonHTML = submitButton.innerHTML;
-        submitButton.innerHTML = 'Відправка...';
+        submitButton.innerHTML = '<span>Відправка...</span>';
         submitButton.disabled = true;
 
         try {
@@ -140,9 +297,9 @@ async function sendFormData(data) {
     formData.append('phone', data.phone);
     formData.append('service', data.service);
     formData.append('message', data.message || '');
-    formData.append('landing', 'Landing 1 (Mobile)');
+    formData.append('landing', 'Landing 1 (Desktop)');
 
-    const response = await fetch('../desktop/send-form.php', {
+    const response = await fetch('send-form.php', {
         method: 'POST',
         body: formData
     });
@@ -163,23 +320,34 @@ async function sendFormData(data) {
 // ========================================
 // Helper Functions
 // ========================================
+function getServiceName(serviceValue) {
+    const services = {
+        'diagnosis': 'Повна діагностика - 500 грн',
+        'protection': 'Захист - 1 500 грн',
+        'wax': 'Чистка воском - від 3 000 грн',
+        'candles': 'Віджиг свічками - від 3 000 грн',
+        'lead': 'Чистка свинцем - від 13 000 грн',
+        'ritual': 'Ритуали - від 2 500 грн'
+    };
+    return services[serviceValue] || serviceValue;
+}
+
 function showAlert(message, type = 'info') {
+    // Create custom alert
     const alertDiv = document.createElement('div');
     alertDiv.className = `custom-alert alert-${type}`;
     alertDiv.textContent = message;
     alertDiv.style.cssText = `
         position: fixed;
-        top: 80px;
-        left: 16px;
-        right: 16px;
+        top: 100px;
+        right: 20px;
         background: ${type === 'error' ? '#f44336' : '#4CAF50'};
         color: white;
-        padding: 16px;
-        border-radius: 12px;
+        padding: 15px 20px;
+        border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         z-index: 10000;
-        animation: slideDown 0.3s ease;
-        font-weight: 600;
+        animation: slideIn 0.3s ease;
     `;
 
     document.body.appendChild(alertDiv);
@@ -247,11 +415,9 @@ function setupSmoothScroll() {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const headerHeight = 64; // mobile header height
-                const targetPosition = target.offsetTop - headerHeight;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
@@ -282,25 +448,26 @@ function initFaqAccordion() {
 }
 
 // ========================================
-// Back to Top Button
+// Mobile Menu Toggle
 // ========================================
-function initBackToTop() {
-    const backToTop = document.getElementById('backToTop');
+function setupMobileMenu() {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.querySelector('.nav-links');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
-    });
-
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('active');
         });
-    });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.classList.remove('active');
+            });
+        });
+    }
 }
 
 // ========================================
@@ -322,15 +489,16 @@ function trackEvent(eventName, eventData = {}) {
 
 function setupAnalytics() {
     // Track messenger clicks
-    document.querySelectorAll('.messenger-btn, .tiktok-link').forEach(btn => {
+    document.querySelectorAll('.social-btn, .messenger-btn, .footer-social-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             const messenger = this.classList.contains('telegram') ? 'Telegram' :
                             this.classList.contains('whatsapp') ? 'WhatsApp' :
-                            this.classList.contains('viber') ? 'Viber' : 'TikTok';
+                            this.classList.contains('viber') ? 'Viber' :
+                            this.classList.contains('tiktok') ? 'TikTok' : 'Unknown';
 
             trackEvent('messenger_click', {
                 messenger: messenger,
-                device: 'mobile'
+                location: this.closest('section')?.id || 'header'
             });
         });
     });
@@ -340,8 +508,7 @@ function setupAnalytics() {
     form.addEventListener('submit', function() {
         const service = document.getElementById('service').value;
         trackEvent('form_submit', {
-            service: service,
-            device: 'mobile'
+            service: getServiceName(service)
         });
     });
 
@@ -350,8 +517,7 @@ function setupAnalytics() {
         btn.addEventListener('click', function() {
             const serviceTitle = this.closest('.service-card').querySelector('.service-title').textContent;
             trackEvent('service_interest', {
-                service: serviceTitle,
-                device: 'mobile'
+                service: serviceTitle
             });
         });
     });
@@ -371,8 +537,7 @@ function setupAnalytics() {
             if (scrollPercent >= depth && !scrollTracked[depth]) {
                 scrollTracked[depth] = true;
                 trackEvent('scroll_depth', {
-                    depth: `${depth}%`,
-                    device: 'mobile'
+                    depth: `${depth}%`
                 });
             }
         });
@@ -380,17 +545,55 @@ function setupAnalytics() {
 }
 
 // ========================================
+// Page Load Performance
+// ========================================
+function trackPageLoad() {
+    window.addEventListener('load', () => {
+        if ('performance' in window) {
+            const perfData = window.performance.timing;
+            const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+            console.log(`⚡ Page load time: ${pageLoadTime}ms`);
+
+            trackEvent('page_performance', {
+                load_time: pageLoadTime
+            });
+        }
+    });
+}
+
+// ========================================
+// Error Handling
+// ========================================
+window.addEventListener('error', function(e) {
+    console.error('❌ Error:', e.error);
+    trackEvent('javascript_error', {
+        message: e.error?.message || 'Unknown error'
+    });
+});
+
+// ========================================
 // Dynamic CSS Animations
 // ========================================
 const style = document.createElement('style');
 style.textContent = `
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
     @keyframes slideOut {
         from {
-            transform: translateY(0);
+            transform: translateX(0);
             opacity: 1;
         }
         to {
-            transform: translateY(-20px);
+            transform: translateX(100%);
             opacity: 0;
         }
     }
@@ -401,20 +604,40 @@ document.head.appendChild(style);
 // Initialize Everything on DOM Load
 // ========================================
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🔮 Таро у Тапочках (Mobile) - Ініціалізація...');
+    console.log('🔮 Таро у Тапочках - Ініціалізація...');
 
     // Initialize all features
+    initThree();       // Three.js 3D background
+    initAOS();
     initSwiper();
-    initFaqAccordion();
+    animateCounters();
+    initNavbar();
     initBackToTop();
+    initReviewModal();
+    initFaqAccordion();
     setupMessengerLinks();
     setupContactForm();
     setupPhoneFormatting();
     setupSmoothScroll();
+    setupMobileMenu();
     setupAnalytics();
+    trackPageLoad();
 
-    console.log('✅ Таро у Тапочках (Mobile) - Все готово!');
+    console.log('✅ Таро у Тапочках - Все готово!');
+    console.log('⚠️ ВАЖЛИВО: Не забудьте замінити CONFIG на реальні дані!');
 });
+
+// ========================================
+// Service Worker for PWA (Optional)
+// ========================================
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // Uncomment to enable PWA
+        // navigator.serviceWorker.register('/service-worker.js')
+        //     .then(registration => console.log('✅ Service Worker registered'))
+        //     .catch(error => console.log('❌ Service Worker registration failed:', error));
+    });
+}
 
 // ========================================
 // Export for Testing
@@ -422,6 +645,7 @@ document.addEventListener('DOMContentLoaded', function() {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         validateForm,
+        getServiceName,
         CONFIG
     };
 }
