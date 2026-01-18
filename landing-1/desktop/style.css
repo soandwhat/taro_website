@@ -1216,23 +1216,26 @@ body {
 
 .review-card {
     position: relative;
-    border-radius: 20px;
-    overflow: hidden;
     cursor: pointer;
-    border: 1px solid var(--border-glass);
     transition: all 0.3s ease;
 }
 
 .review-card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent);
-    box-shadow: var(--shadow-glow);
 }
 
 .review-image {
-    width: 100%;
+    width: 80%;
     height: auto;
     display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow-glow);
+    transition: all 0.3s ease;
+}
+
+.review-image:hover {
+    box-shadow: 0 0 30px rgba(253, 121, 168, 0.6);
 }
 
 .review-overlay {

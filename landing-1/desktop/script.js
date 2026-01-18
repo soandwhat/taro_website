@@ -4,9 +4,9 @@
 
 // Configuration
 const CONFIG = {
-    telegram: '@your_username',
-    whatsapp: '380XXXXXXXXX',
-    viber: '380XXXXXXXXX',
+    telegram: 'taroutapockah',
+    whatsapp: '380633895103',
+    viber: '380633895103',
     email: 'your.email@example.com',
     telegram_bot_token: 'YOUR_BOT_TOKEN',
     telegram_chat_id: 'YOUR_CHAT_ID'
@@ -291,33 +291,30 @@ function validateForm(data) {
 // Send Form Data
 // ========================================
 async function sendFormData(data) {
-    const message = `
-🔮 Нова заявка з сайту "Таро у Тапочках"
+    // Создаем FormData для отправки на PHP
+    const formData = new FormData();
+    formData.append('name', data.name);
+    formData.append('phone', data.phone);
+    formData.append('service', data.service);
+    formData.append('message', data.message || '');
+    formData.append('landing', 'Landing 1 (Desktop)');
 
-👤 Ім'я: ${data.name}
-📱 Телефон: ${data.phone}
-🎯 Послуга: ${getServiceName(data.service)}
-💬 Повідомлення: ${data.message || 'Немає'}
-
-📅 Дата: ${new Date().toLocaleString('uk-UA')}
-    `.trim();
-
-    const url = `https://api.telegram.org/bot${CONFIG.telegram_bot_token}/sendMessage`;
-
-    const response = await fetch(url, {
+    const response = await fetch('send-form.php', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            chat_id: CONFIG.telegram_chat_id,
-            text: message
-        })
+        body: formData
     });
 
-    if (!response.ok) {
-        throw new Error('Помилка відправки в Telegram');
+    const result = await response.json();
+
+    if (result.error) {
+        throw new Error(result.error);
     }
+
+    if (!result.success) {
+        throw new Error('Помилка відправки форми');
+    }
+
+    return result;
 }
 
 // ========================================
