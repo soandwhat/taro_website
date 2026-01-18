@@ -1968,6 +1968,10 @@ body {
         font-size: 2.2rem;
     }
 
+    .hero-title-3d {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
     .hero-cta {
         flex-direction: column;
     }
@@ -1978,7 +1982,63 @@ body {
     }
 
     .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stat-item {
+        padding: 20px 15px;
+    }
+
+    /* Зменшення пустого простору в секції "Про мене" */
+    .about-content {
+        gap: 20px;
+        margin-top: 15px;
+    }
+
+    .about-image {
+        margin-bottom: 0;
+    }
+
+    .image-wrapper img {
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    /* Зменшення розміру карточок послуг */
+    .service-card {
+        padding: 20px 18px;
+    }
+
+    .service-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .service-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    .service-price {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-features {
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+    }
+
+    .service-features li {
+        font-size: 0.8rem;
+        padding-left: 1.2rem;
     }
 
     .tarot-spread .card {
