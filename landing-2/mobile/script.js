@@ -50,7 +50,7 @@ function initSwiper() {
     if (typeof Swiper !== 'undefined') {
         new Swiper('.reviewsSwiper', {
             slidesPerView: 1,
-            spaceBetween: 30,
+            spaceBetween: 5,
             loop: true,
             autoplay: {
                 delay: 5000,
@@ -67,12 +67,15 @@ function initSwiper() {
             breakpoints: {
                 640: {
                     slidesPerView: 1,
+                    spaceBetween: 5,
                 },
                 768: {
                     slidesPerView: 2,
+                    spaceBetween: 5,
                 },
                 1024: {
                     slidesPerView: 2,
+                    spaceBetween: 5,
                 }
             }
         });
@@ -297,7 +300,7 @@ async function sendFormData(data) {
     formData.append('phone', data.phone);
     formData.append('service', data.service);
     formData.append('message', data.message || '');
-    formData.append('landing', 'Landing 1 (Desktop)');
+    formData.append('landing', 'Landing 2 (Mobile)');
 
     const response = await fetch('send-form.php', {
         method: 'POST',

@@ -297,7 +297,7 @@ async function sendFormData(data) {
     formData.append('phone', data.phone);
     formData.append('service', data.service);
     formData.append('message', data.message || '');
-    formData.append('landing', 'Landing 1 (Desktop)');
+    formData.append('landing', 'Landing 1 (Mobile)');
 
     const response = await fetch('send-form.php', {
         method: 'POST',
@@ -483,6 +483,7 @@ function trackEvent(eventName, eventData = {}) {
     if (typeof fbq !== 'undefined') {
         fbq('track', eventName, eventData);
     }
+    
 
     console.log('📊 Event tracked:', eventName, eventData);
 }

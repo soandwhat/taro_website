@@ -1,0 +1,550 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "name": "Дурень",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-57-page-00001-min.webp",
+      "meaning": "Початок нового шляху, свобода від обмежень. Сьогодні день для сміливих рішень та нових можливостей.",
+      "advice": "Довіртесь інтуїції та зробіть крок у невідоме. Не бійтеся ризикувати."
+    },
+    {
+      "id": 2,
+      "name": "Маг",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-58-page-00001-min.webp",
+      "meaning": "У вас є всі ресурси для успіху. День для активних дій та прояву талантів.",
+      "advice": "Використовуйте свої навички. Все необхідне вже у вас."
+    },
+    {
+      "id": 3,
+      "name": "Верховна Жриця",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-59-page-00001-min.webp",
+      "meaning": "День інтуїції та таємниць. Прислухайтесь до внутрішнього голосу.",
+      "advice": "Не поспішайте з рішеннями. Мудрість приходить у тиші."
+    },
+    {
+      "id": 4,
+      "name": "Імператриця",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-60-page-00001-min.webp",
+      "meaning": "Достаток, творчість, турбота. Час для краси та гармонії.",
+      "advice": "Подбайте про себе та близьких. Створіть затишок."
+    },
+    {
+      "id": 5,
+      "name": "Імператор",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-61-page-00001-min.webp",
+      "meaning": "Структура, порядок, лідерство. День для важливих рішень.",
+      "advice": "Візьміть контроль над ситуацією. Будьте рішучими."
+    },
+    {
+      "id": 6,
+      "name": "Ієрофант",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-62-page-00001-min.webp",
+      "meaning": "Традиції, навчання, духовна мудрість. Час звернутись до досвіду.",
+      "advice": "Шукайте поради у мудрих людей або традиціях."
+    },
+    {
+      "id": 7,
+      "name": "Закохані",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-63-page-00001-min.webp",
+      "meaning": "День для стосунків та важливих виборів серця. Гармонія у партнерстві.",
+      "advice": "Прислухайтесь до серця у важливих рішеннях."
+    },
+    {
+      "id": 8,
+      "name": "Колісниця",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-64-page-00001-min.webp",
+      "meaning": "Перемога, рух вперед, контроль. День для досягнень.",
+      "advice": "Рухайтесь до мети впевнено. Успіх близько."
+    },
+    {
+      "id": 9,
+      "name": "Сила",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-65-page-00001-min.webp",
+      "meaning": "Внутрішня сила, мужність, терпіння. Ви здатні подолати перешкоди.",
+      "advice": "Будьте терплячими але непохитними. Справжня сила — у витримці."
+    },
+    {
+      "id": 10,
+      "name": "Відлюдник",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-66-page-00001-min.webp",
+      "meaning": "Самопізнання, усамітнення, внутрішня мудрість. Час для роздумів.",
+      "advice": "Приділіть час собі. Відповіді всередині вас."
+    },
+    {
+      "id": 11,
+      "name": "Колесо Фортуни",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-67-page-00001-min.webp",
+      "meaning": "Зміни, доля, нові можливості. Поворотний момент.",
+      "advice": "Прийміть зміни. Доля на вашому боці."
+    },
+    {
+      "id": 12,
+      "name": "Справедливість",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-68-page-00001-min.webp",
+      "meaning": "Баланс, правда, кармічна справедливість. Час для чесності.",
+      "advice": "Діяйте справедливо. Правда виявиться."
+    },
+    {
+      "id": 13,
+      "name": "Повішений",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-69-page-00001-min.webp",
+      "meaning": "Пауза, нове бачення, жертва заради вищої мети. Час переосмислення.",
+      "advice": "Подивіться на ситуацію під іншим кутом. Іноді треба відпустити."
+    },
+    {
+      "id": 14,
+      "name": "Смерть",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-70-page-00001-min.webp",
+      "meaning": "Трансформація, завершення старого, початок нового. Не бійтесь змін.",
+      "advice": "Відпустіть те, що віджило. Попереду — нове життя."
+    },
+    {
+      "id": 15,
+      "name": "Поміркованість",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-71-page-00001-min.webp",
+      "meaning": "Баланс, гармонія, терпіння. Час для злагодженості.",
+      "advice": "Шукайте золоту середину. Поєднуйте протилежності."
+    },
+    {
+      "id": 16,
+      "name": "Диявол",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-72-page-00001-min.webp",
+      "meaning": "Обмеження, залежності, ілюзії. Усвідомлення того, що тримає вас.",
+      "advice": "Визнайте свої слабкості. Тільки так можна звільнитись."
+    },
+    {
+      "id": 17,
+      "name": "Вежа",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-73-page-00001-min.webp",
+      "meaning": "Раптові зміни, руйнування ілюзій, прозріння. Час правди.",
+      "advice": "Прийміть несподівані зміни. Вони звільняють місце для нового."
+    },
+    {
+      "id": 18,
+      "name": "Зірка",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-74-page-00001-min.webp",
+      "meaning": "Надія, натхнення, мрії. Ваші бажання можуть здійснитись.",
+      "advice": "Не втрачайте надії. Мрійте сміливо."
+    },
+    {
+      "id": 19,
+      "name": "Місяць",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-75-page-00001-min.webp",
+      "meaning": "Інтуїція, підсвідомість, ілюзії. Зверніть увагу на сни.",
+      "advice": "Довіряйте інтуїції. Не все те, чим здається."
+    },
+    {
+      "id": 20,
+      "name": "Сонце",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-76-page-00001-min.webp",
+      "meaning": "Радість, успіх, життєва енергія. День наповнений світлом.",
+      "advice": "Дійте сміливо! Всесвіт на вашому боці."
+    },
+    {
+      "id": 21,
+      "name": "Суд",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-77-page-00001-min.webp",
+      "meaning": "Пробудження, прощення, нові можливості. Час відродження.",
+      "advice": "Звільніться від минулого. Прийміть своє покликання."
+    },
+    {
+      "id": 22,
+      "name": "Світ",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-78-page-00001-min.webp",
+      "meaning": "Завершення циклу, досягнення, гармонія. Повнота буття.",
+      "advice": "Святкуйте свої перемоги! Ви пройшли довгий шлях."
+    },
+    {
+      "id": 23,
+      "name": "Туз Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-14-page-00001-min.webp",
+      "meaning": "Нові починання, творча енергія, натхнення. Час для нових проектів.",
+      "advice": "Беріться за нові справи. Енергія на піку."
+    },
+    {
+      "id": 24,
+      "name": "Двійка Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-1-page-00001-min.webp",
+      "meaning": "Планування, рішення, вибір напрямку. Світ у ваших руках.",
+      "advice": "Плануйте сміливо. Час робити вибір."
+    },
+    {
+      "id": 25,
+      "name": "Трійка Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-2-page-00001-min.webp",
+      "meaning": "Прогрес, розширення, дальше бачення. Плани починають втілюватись.",
+      "advice": "Дивіться вперед. Можливості на горизонті."
+    },
+    {
+      "id": 26,
+      "name": "Четвірка Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-3-page-00001-min.webp",
+      "meaning": "Святкування, стабільність, гармонія. Час для радості.",
+      "advice": "Насолоджуйтесь моментом. Святкуйте досягнення."
+    },
+    {
+      "id": 27,
+      "name": "П'ятірка Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-4-page-00001-min.webp",
+      "meaning": "Конфлікт, конкуренція, різні думки. Боротьба ідей.",
+      "advice": "Не втягуйтесь у безглузді суперечки. Зберігайте енергію."
+    },
+    {
+      "id": 28,
+      "name": "Шістка Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-5-page-00001-min.webp",
+      "meaning": "Перемога, визнання, успіх. Ваші зусилля оцінені.",
+      "advice": "Приймайте похвалу. Ви це заслужили."
+    },
+    {
+      "id": 29,
+      "name": "Сімка Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-6-page-00001-min.webp",
+      "meaning": "Захист позицій, стійкість, конкуренція. Відстоюйте своє.",
+      "advice": "Будьте рішучими. Не здавайтесь."
+    },
+    {
+      "id": 30,
+      "name": "Вісімка Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-7-page-00001-min.webp",
+      "meaning": "Швидкий рух, новини, швидкий прогрес. Події розвиваються стрімко.",
+      "advice": "Діяйте швидко. Час прискорюється."
+    },
+    {
+      "id": 31,
+      "name": "Дев'ятка Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-8-page-00001-min.webp",
+      "meaning": "Витривалість, стійкість, остання межа. Майже у фіналі.",
+      "advice": "Не здавайтесь зараз. Трохи ще потерпіти."
+    },
+    {
+      "id": 32,
+      "name": "Десятка Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-9-page-00001-min.webp",
+      "meaning": "Тягар відповідальності, перевантаження. Забагато на плечах.",
+      "advice": "Делегуйте частину справ. Не тягніть все самі."
+    },
+    {
+      "id": 33,
+      "name": "Паж Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-10-page-00001-min.webp",
+      "meaning": "Хороші новини, ентузіазм, пропозиції. Вісник можливостей.",
+      "advice": "Будьте відкритими до нового. Цікаві пропозиції."
+    },
+    {
+      "id": 34,
+      "name": "Лицар Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-11-page-00001-min.webp",
+      "meaning": "Дії, пригоди, імпульсивність. Час для сміливих вчинків.",
+      "advice": "Діяйте рішуче, але не забувайте про план."
+    },
+    {
+      "id": 35,
+      "name": "Королева Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-12-page-00001-min.webp",
+      "meaning": "Впевненість, харизма, творча енергія. Ваша сила — у природності.",
+      "advice": "Будьте собою. Ваша енергія надихає інших."
+    },
+    {
+      "id": 36,
+      "name": "Король Жезлів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-13-page-00001-min.webp",
+      "meaning": "Лідерство, візія, підприємництво. Час вести за собою.",
+      "advice": "Візьміть на себе відповідальність. Ви — лідер."
+    },
+    {
+      "id": 37,
+      "name": "Туз Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-28-page-00001-min.webp",
+      "meaning": "Нова любов, емоційне наповнення, духовне пробудження.",
+      "advice": "Відкрийте серце. Любов поруч."
+    },
+    {
+      "id": 38,
+      "name": "Двійка Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-15-page-00001-min.webp",
+      "meaning": "Партнерство, єдність, взаємність. Гармонія у стосунках.",
+      "advice": "Цінуйте близьких. Разом — сильніше."
+    },
+    {
+      "id": 39,
+      "name": "Трійка Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-16-page-00001-min.webp",
+      "meaning": "Дружба, святкування, спільність. Радість у колі близьких.",
+      "advice": "Проведіть час із друзями. Святкуйте життя."
+    },
+    {
+      "id": 40,
+      "name": "Четвірка Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-17-page-00001-min.webp",
+      "meaning": "Апатія, нові пропозиції, переоцінка. Подивіться навколо.",
+      "advice": "Не пропустіть нові можливості через байдужість."
+    },
+    {
+      "id": 41,
+      "name": "П'ятірка Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-18-page-00001-min.webp",
+      "meaning": "Розчарування, втрата, смуток. Але не все втрачено.",
+      "advice": "Зверніть увагу на те, що залишилось. Є підстава для надії."
+    },
+    {
+      "id": 42,
+      "name": "Шістка Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-19-page-00001-min.webp",
+      "meaning": "Ностальгія, спогади, дитяча радість. Повернення до витоків.",
+      "advice": "Згадайте про прості радощі. Зв'яжіться зі старими друзями."
+    },
+    {
+      "id": 43,
+      "name": "Сімка Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-20-page-00001-min.webp",
+      "meaning": "Ілюзії, вибір, багато варіантів. Не всі пропозиції реальні.",
+      "advice": "Будьте реалістичними. Не всі мрії варто втілювати."
+    },
+    {
+      "id": 44,
+      "name": "Вісімка Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-21-page-00001-min.webp",
+      "meaning": "Відхід, пошук сенсу, залишення комфорту. Час іти далі.",
+      "advice": "Не бійтесь залишити те, що не приносить щастя."
+    },
+    {
+      "id": 45,
+      "name": "Дев'ятка Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-22-page-00001-min.webp",
+      "meaning": "Задоволення, виконання бажань, емоційна повнота. Щастя.",
+      "advice": "Насолоджуйтесь моментом. Ви маєте багато."
+    },
+    {
+      "id": 46,
+      "name": "Десятка Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-23-page-00001-min.webp",
+      "meaning": "Сімейне щастя, гармонія, емоційне благополуччя.",
+      "advice": "Цінуйте сім'ю та близьких. Це найважливіше."
+    },
+    {
+      "id": 47,
+      "name": "Паж Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-24-page-00001-min.webp",
+      "meaning": "Емоційні новини, творчі ідеї, інтуїтивні підказки.",
+      "advice": "Прислухайтесь до внутрішнього голосу. Цікаві ідеї."
+    },
+    {
+      "id": 48,
+      "name": "Лицар Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-25-page-00001-min.webp",
+      "meaning": "Романтика, пропозиції, чарівність. Вісник кохання.",
+      "advice": "Будьте відкритими до романтики. Почуття щирі."
+    },
+    {
+      "id": 49,
+      "name": "Королева Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-26-page-00001-min.webp",
+      "meaning": "Емпатія, інтуїція, турбота. Глибина почуттів.",
+      "advice": "Довіряйте своїм емоціям. Ваша чутливість — сила."
+    },
+    {
+      "id": 50,
+      "name": "Король Кубків",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-27-page-00001-min.webp",
+      "meaning": "Емоційна зрілість, мудрість, контроль почуттів.",
+      "advice": "Зберігайте спокій. Керуйте емоціями, не навпаки."
+    },
+    {
+      "id": 51,
+      "name": "Туз Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-42-page-00001-min.webp",
+      "meaning": "Ясність думки, правда, прорив. Прозріння.",
+      "advice": "Думайте чітко. Правда стане очевидною."
+    },
+    {
+      "id": 52,
+      "name": "Двійка Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-29-page-00001-min.webp",
+      "meaning": "Складний вибір, пауза, ігнорування проблеми.",
+      "advice": "Не можна вічно уникати рішення. Зважте всі факти."
+    },
+    {
+      "id": 53,
+      "name": "Трійка Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-30-page-00001-min.webp",
+      "meaning": "Емоційний біль, зрада, розлучення. Важкий період.",
+      "advice": "Дозвольте собі пережити біль. Це теж мине."
+    },
+    {
+      "id": 54,
+      "name": "Четвірка Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-31-page-00001-min.webp",
+      "meaning": "Відпочинок, відновлення, медитація. Пауза необхідна.",
+      "advice": "Візьміть перерву. Відновіть сили."
+    },
+    {
+      "id": 55,
+      "name": "П'ятірка Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-32-page-00001-min.webp",
+      "meaning": "Конфлікт, поразка, порожня перемога. Гіркий присмак.",
+      "advice": "Не всі битви варто виграти. Знайте коли відступити."
+    },
+    {
+      "id": 56,
+      "name": "Шістка Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-33-page-00001-min.webp",
+      "meaning": "Перехід, рух вперед, залишення проблем позаду.",
+      "advice": "Час рухатись далі. Залиште минуле позаду."
+    },
+    {
+      "id": 57,
+      "name": "Сімка Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-34-page-00001-min.webp",
+      "meaning": "Обман, хитрість, стратегія. Не всі карти на столі.",
+      "advice": "Будьте обережними. Перевіряйте інформацію."
+    },
+    {
+      "id": 58,
+      "name": "Вісімка Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-35-page-00001-min.webp",
+      "meaning": "Відчуття пастки, обмеження, страхи. Але вихід є.",
+      "advice": "Обмеження частіше у голові. Подивіться ширше."
+    },
+    {
+      "id": 59,
+      "name": "Дев'ятка Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-36-page-00001-min.webp",
+      "meaning": "Тривога, нічні страхи, хвилювання. Важко спати.",
+      "advice": "Поговоріть про свої страхи. Вони не такі страшні."
+    },
+    {
+      "id": 60,
+      "name": "Десятка Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-37-page-00001-min.webp",
+      "meaning": "Завершення циклу, крах, але і новий початок.",
+      "advice": "Все закінчується. Це дно — тепер тільки вгору."
+    },
+    {
+      "id": 61,
+      "name": "Паж Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-38-page-00001-min.webp",
+      "meaning": "Новини, допитливість, спостережливість. Будьте пильними.",
+      "advice": "Збирайте інформацію. Знання — сила."
+    },
+    {
+      "id": 62,
+      "name": "Лицар Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-39-page-00001-min.webp",
+      "meaning": "Рішучість, прямолінійність, швидкі дії. Атака.",
+      "advice": "Діяйте швидко і рішуче, але подумайте спочатку."
+    },
+    {
+      "id": 63,
+      "name": "Королева Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-40-page-00001-min.webp",
+      "meaning": "Незалежність, ясність, прямолінійність. Розум над емоціями.",
+      "advice": "Будьте об'єктивними. Думайте тверезо."
+    },
+    {
+      "id": 64,
+      "name": "Король Мечів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-41-page-00001-min.webp",
+      "meaning": "Інтелект, влада, об'єктивність. Авторитет розуму.",
+      "advice": "Використовуйте логіку. Ваш розум — найкраща зброя."
+    },
+    {
+      "id": 65,
+      "name": "Туз Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-56-page-00001-min.webp",
+      "meaning": "Нові фінансові можливості, матеріальний початок, процвітання.",
+      "advice": "Нова можливість для заробітку. Скористайтесь нею."
+    },
+    {
+      "id": 66,
+      "name": "Двійка Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-43-page-00001-min.webp",
+      "meaning": "Баланс, жонглювання обов'язками, адаптація.",
+      "advice": "Знайдіть баланс між справами. Будьте гнучкими."
+    },
+    {
+      "id": 67,
+      "name": "Трійка Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-44-page-00001-min.webp",
+      "meaning": "Командна робота, навички, визнання майстерності.",
+      "advice": "Співпрацюйте з іншими. Разом досягнете більшого."
+    },
+    {
+      "id": 68,
+      "name": "Четвірка Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-45-page-00001-min.webp",
+      "meaning": "Контроль, жадібність, стабільність. Тримаєте міцно.",
+      "advice": "Безпека важлива, але не перегинайте з контролем."
+    },
+    {
+      "id": 69,
+      "name": "П'ятірка Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-46-page-00001-min.webp",
+      "meaning": "Фінансові труднощі, самотність, але допомога поруч.",
+      "advice": "Не соромтесь просити допомоги. Вона є."
+    },
+    {
+      "id": 70,
+      "name": "Шістка Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-47-page-00001-min.webp",
+      "meaning": "Щедрість, справедливий обмін, допомога іншим.",
+      "advice": "Ділитесь тим, що маєте. Все повернеться."
+    },
+    {
+      "id": 71,
+      "name": "Сімка Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-48-page-00001-min.webp",
+      "meaning": "Очікування результатів, терпіння, оцінка прогресу.",
+      "advice": "Дайте часу. Плоди дозрівають."
+    },
+    {
+      "id": 72,
+      "name": "Вісімка Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-49-page-00001-min.webp",
+      "meaning": "Майстерність, старанність, удосконалення навичок.",
+      "advice": "Працюйте над майстерністю. Деталі важливі."
+    },
+    {
+      "id": 73,
+      "name": "Дев'ятка Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-50-page-00001-min.webp",
+      "meaning": "Самодостатність, розкіш, фінансова стабільність.",
+      "advice": "Насолоджуйтесь плодами праці. Ви заслужили."
+    },
+    {
+      "id": 74,
+      "name": "Десятка Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-51-page-00001-min.webp",
+      "meaning": "Матеріальна стабільність, спадщина, сімейний достаток.",
+      "advice": "Думайте про майбутнє покоління. Створюйте спадок."
+    },
+    {
+      "id": 75,
+      "name": "Паж Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-52-page-00001-min.webp",
+      "meaning": "Нові можливості навчання, старанність, практичність.",
+      "advice": "Вчіться новому. Практичні навички важливі."
+    },
+    {
+      "id": 76,
+      "name": "Лицар Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-53-page-00001-min.webp",
+      "meaning": "Відповідальність, надійність, наполегливість у роботі.",
+      "advice": "Будьте наполегливими. Крок за кроком до мети."
+    },
+    {
+      "id": 77,
+      "name": "Королева Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-54-page-00001-min.webp",
+      "meaning": "Практичність, турбота, фінансова незалежність.",
+      "advice": "Піклуйтесь про матеріальну базу і близьких."
+    },
+    {
+      "id": 78,
+      "name": "Король Пентаклів",
+      "image": "cards/radiant_rider_waite_tarot_final_78_cards-55-page-00001-min.webp",
+      "meaning": "Достаток, бізнес-хватка, матеріальний успіх.",
+      "advice": "Будуйте імперії. Ваша практичність приносить успіх."
+    }
+  ]
+}

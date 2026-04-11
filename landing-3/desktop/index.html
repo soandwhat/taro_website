@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Таро у Тапочках - затишні розклади таро в домашній атмосфері. Карта дня, професійні консультації та енергетичні практики.">
+    <meta name="keywords" content="таро, розклад таро, карта дня, ворожіння, чистка, захист, ритуали">
+    <title>Таро у Тапочках | Затишні розклади таро</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="girl.webp">
+    <link rel="apple-touch-icon" href="girl.webp">
+
+    <!-- Fonts - Nunito (soft, cozy) + Playfair Display (elegant) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper Slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cursor Follower -->
+    <div class="cursor-follower">
+        <div class="cursor-dot"></div>
+        <div class="cursor-glow"></div>
+    </div>
+
+    <!-- Floating Background Elements -->
+    <div class="floating-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#home" class="logo">
+                    <div class="logo-glow"></div>
+                    <img src="girl.webp" alt="Таро у Тапочках" class="logo-img">
+                    <div class="logo-text-wrapper">
+                        <span class="logo-text">Таро у Тапочках</span>
+                        <span class="logo-tagline">Затишок та мудрість</span>
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#card-of-day">Карта дня</a></li>
+                    <li><a href="#about">Про мене</a></li>
+                    <li><a href="#services">Послуги</a></li>
+                    <li><a href="#reviews">Відгуки</a></li>
+                    <li><a href="#contact" class="nav-cta">
+                        <span>Замовити</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-mesh-gradient"></div>
+
+        <!-- Floating Stars -->
+        <div class="hero-stars">
+            <span class="star star-1">✦</span>
+            <span class="star star-2">✧</span>
+            <span class="star star-3">✦</span>
+            <span class="star star-4">✧</span>
+            <span class="star star-5">✦</span>
+            <span class="star star-6">✧</span>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>Ваш затишний провідник</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="title-line">Розкладемо</span>
+                        <span class="title-line title-accent">все по поличках</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Привіт! Я Альона, і я допоможу вам знайти відповіді на питання,
+                        що хвилюють. Без зайвої містики — тільки тепло, турбота та
+                        мудрість карт Таро.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="10">0</span>
+                            <span class="stat-label">років досвіду</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="5000">0</span>
+                            <span class="stat-label">розкладів</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="24">0</span>
+                            <span class="stat-label">години на добу</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary magnetic">
+                            <span class="btn-text">Замовити розклад</span>
+                            <span class="btn-icon">→</span>
+                            <span class="btn-ripple"></span>
+                        </a>
+                        <a href="#card-of-day" class="btn btn-ghost magnetic">
+                            <span class="btn-text">Карта дня</span>
+                            <span class="btn-icon">✦</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-card-stack">
+                        <div class="stack-card stack-card-1"></div>
+                        <div class="stack-card stack-card-2"></div>
+                        <div class="stack-card stack-card-3"></div>
+                        <div class="stack-card-main">
+                            <div class="card-inner">
+                                <div class="card-pattern">
+                                    <span class="pattern-symbol">✦</span>
+                                </div>
+                            </div>
+                            <div class="card-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Card of the Day Section -->
+    <section class="card-of-day" id="card-of-day">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Щоденна мудрість</span>
+                <h2 class="section-title">
+                    <span class="title-reveal">Карта дня</span>
+                </h2>
+                <p class="section-subtitle">Оберіть карту та отримайте послання на сьогодні</p>
+            </div>
+
+            <div class="card-day-container">
+                <div class="card-day-wrapper">
+                    <!-- Card Selection -->
+                    <div class="cards-spread" id="cardsSpread">
+                        <div class="spread-card" data-index="0">
+                            <div class="spread-card-inner">
+                                <div class="spread-card-back">
+                                    <div class="card-ornament">✦</div>
+                                </div>
+                                <div class="spread-card-front">
+                                    <div class="card-content"></div>
+                                </div>
+                            </div>
+                            <div class="card-shimmer"></div>
+                        </div>
+                        <div class="spread-card" data-index="1">
+                            <div class="spread-card-inner">
+                                <div class="spread-card-back">
+                                    <div class="card-ornament">✦</div>
+                                </div>
+                                <div class="spread-card-front">
+                                    <div class="card-content"></div>
+                                </div>
+                            </div>
+                            <div class="card-shimmer"></div>
+                        </div>
+                        <div class="spread-card" data-index="2">
+                            <div class="spread-card-inner">
+                                <div class="spread-card-back">
+                                    <div class="card-ornament">✦</div>
+                                </div>
+                                <div class="spread-card-front">
+                                    <div class="card-content"></div>
+                                </div>
+                            </div>
+                            <div class="card-shimmer"></div>
+                        </div>
+                    </div>
+
+                    <p class="spread-hint" id="spreadHint">Оберіть одну карту, щоб дізнатися послання дня</p>
+
+                    <!-- Result Display -->
+                    <div class="card-result" id="cardResult">
+                        <div class="result-card">
+                            <div class="result-card-image" id="resultCardImage">
+                                <span class="result-icon"></span>
+                            </div>
+                            <div class="result-card-glow"></div>
+                        </div>
+                        <div class="result-content">
+                            <h3 class="result-title" id="resultTitle"></h3>
+                            <p class="result-meaning" id="resultMeaning"></p>
+                            <div class="result-advice">
+                                <span class="advice-label">Порада на сьогодні:</span>
+                                <p class="advice-text" id="resultAdvice"></p>
+                            </div>
+                            <button class="btn btn-secondary reset-btn" id="resetCard">
+                                <span>Обрати іншу карту</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-day-cta">
+                    <p class="cta-text">Хочете отримати повний персональний розклад?</p>
+                    <a href="#contact" class="btn btn-primary magnetic">
+                        <span class="btn-text">Замовити розклад</span>
+                        <span class="btn-icon">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Particles for card reveal -->
+        <div class="card-particles" id="cardParticles"></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="about_me.webp" alt="Альона - Таро у Тапочках" class="about-photo">
+                        <div class="frame-decoration frame-tl"></div>
+                        <div class="frame-decoration frame-tr"></div>
+                        <div class="frame-decoration frame-bl"></div>
+                        <div class="frame-decoration frame-br"></div>
+                    </div>
+                    <div class="image-blob"></div>
+                    <div class="floating-badge badge-experience">
+                        <span class="badge-number">10+</span>
+                        <span class="badge-text">років досвіду</span>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <span class="section-label">Про мене</span>
+                    <h2 class="section-title">
+                        <span class="title-reveal">Привіт, я Альона!</span>
+                    </h2>
+
+                    <div class="about-text">
+                        <p class="text-highlight">
+                            Я практикуюча таролог, і вже понад 10 років допомагаю людям
+                            знаходити відповіді через мудрість карт Таро.
+                        </p>
+                        <p>
+                            Мій канал "Таро у Тапочках" — це про затишок і тепло. Тут немає
+                            страшних прогнозів та зайвої містики. Тільки щирість, підтримка
+                            та реальна допомога у вашій ситуації.
+                        </p>
+                        <p>
+                            Я вірю, що таро — це не магія, а інструмент самопізнання.
+                            Карти допомагають побачити те, що ми часто не хочемо помічати,
+                            і знайти шлях до гармонії.
+                        </p>
+                    </div>
+
+                    <div class="about-values">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </div>
+                            <div class="value-text">
+                                <h4>Турбота</h4>
+                                <p>Кожен клієнт для мене особливий</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 6v6l4 2"></path>
+                                </svg>
+                            </div>
+                            <div class="value-text">
+                                <h4>Доступність</h4>
+                                <p>Завжди на зв'язку, 24 години на добу</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div class="value-text">
+                                <h4>Конфіденційність</h4>
+                                <p>Ваші таємниці у безпеці</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary magnetic">
+                        <span class="btn-text">Записатися на консультацію</span>
+                        <span class="btn-icon">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Послуги</span>
+                <h2 class="section-title">
+                    <span class="title-reveal">Чим я можу допомогти</span>
+                </h2>
+                <p class="section-subtitle">Оберіть те, що вам потрібно зараз</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card" data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="service-icon">
+                            <span>🎴</span>
+                        </div>
+                        <h3 class="service-title">Повна діагностика</h3>
+                        <p class="service-description">
+                            Детальний аналіз вашої ситуації, виявлення блоків та рекомендації щодо подальших дій
+                        </p>
+                        <div class="service-price">
+                            <span class="price-value">500</span>
+                            <span class="price-currency">грн</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Аналіз ситуації
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Виявлення блоків
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Рекомендації
+                            </li>
+                        </ul>
+                        <a href="#contact" class="service-btn">
+                            <span>Замовити</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card" data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="service-icon">
+                            <span>🛡️</span>
+                        </div>
+                        <h3 class="service-title">Захист</h3>
+                        <p class="service-description">
+                            Енергетичний захист від негативу, заздрощів та недоброзичливості
+                        </p>
+                        <div class="service-price">
+                            <span class="price-value">1 500</span>
+                            <span class="price-currency">грн</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Енергетичний щит
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Захист від негативу
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Усунення впливу
+                            </li>
+                        </ul>
+                        <a href="#contact" class="service-btn">
+                            <span>Замовити</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card" data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="service-icon">
+                            <span>🕯️</span>
+                        </div>
+                        <h3 class="service-title">Чистка воском</h3>
+                        <p class="service-description">
+                            М'яка чистка для зняття легкого негативу та очищення енергетики
+                        </p>
+                        <div class="service-price">
+                            <span class="price-value">від 3 000</span>
+                            <span class="price-currency">грн</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Глибока чистка
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Зняття програм
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Відновлення енергії
+                            </li>
+                        </ul>
+                        <a href="#contact" class="service-btn">
+                            <span>Замовити</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card" data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="service-icon">
+                            <span>🔥</span>
+                        </div>
+                        <h3 class="service-title">Віджиг свічками</h3>
+                        <p class="service-description">
+                            Потужна практика для зняття пристрітів, заздрощів та енергетичних прив'язок
+                        </p>
+                        <div class="service-price">
+                            <span class="price-value">від 3 000</span>
+                            <span class="price-currency">грн</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Потужне очищення
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Баланс енергії
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Відновлення сил
+                            </li>
+                        </ul>
+                        <a href="#contact" class="service-btn">
+                            <span>Замовити</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card" data-tilt>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="service-icon">
+                            <span>⚗️</span>
+                        </div>
+                        <h3 class="service-title">Чистка свинцем</h3>
+                        <p class="service-description">
+                            Найглибша чистка для важких випадків: родові програми, сильні впливи
+                        </p>
+                        <div class="service-price">
+                            <span class="price-value">від 13 000</span>
+                            <span class="price-currency">грн</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Максимальна чистка
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Важкі впливи
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Повне відновлення
+                            </li>
+                        </ul>
+                        <a href="#contact" class="service-btn">
+                            <span>Замовити</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <!-- Service 6 - Featured -->
+                <div class="service-card featured" data-tilt>
+                    <div class="featured-badge">Популярне</div>
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="service-icon">
+                            <span>✨</span>
+                        </div>
+                        <h3 class="service-title">Ритуали</h3>
+                        <p class="service-description">
+                            Індивідуальні ритуали на любов, достаток, здоров'я та успіх у справах
+                        </p>
+                        <div class="service-price">
+                            <span class="price-value">від 2 500</span>
+                            <span class="price-currency">грн</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Індивідуальний підхід
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Будь-яка мета
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                Потужний результат
+                            </li>
+                        </ul>
+                        <a href="#contact" class="service-btn primary">
+                            <span>Замовити</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="faq-layout">
+                <div class="faq-header">
+                    <span class="section-label">FAQ</span>
+                    <h2 class="section-title">
+                        <span class="title-reveal">Часті запитання</span>
+                    </h2>
+                    <p class="section-subtitle">Відповіді на популярні питання про мої послуги</p>
+
+                    <div class="faq-illustration">
+                        <div class="illustration-card">
+                            <span>?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Як проходить розклад таро?</span>
+                            <div class="faq-icon">
+                                <span class="icon-line"></span>
+                                <span class="icon-line"></span>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Розклад проходить онлайн через зручний для вас месенджер (Telegram, Viber, WhatsApp).
+                                Ви формулюєте своє питання, я роблю розклад карт та надсилаю вам детальну інтерпретацію
+                                з фото карт. Зазвичай це займає 1-2 години. Після розкладу ви можете задати уточнюючі питання.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Що таке діагностика і навіщо вона потрібна?</span>
+                            <div class="faq-icon">
+                                <span class="icon-line"></span>
+                                <span class="icon-line"></span>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Діагностика — це комплексний аналіз вашої енергетики, який показує наявність негативних
+                                програм, блоків, порчі чи пробоїв в аурі. Вона допомагає зрозуміти першопричину проблем
+                                і визначити, які саме практики вам потрібні.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Чим відрізняються чистки воском, свічками та свинцем?</span>
+                            <div class="faq-icon">
+                                <span class="icon-line"></span>
+                                <span class="icon-line"></span>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <strong>Чистка воском</strong> — м'яка, підходить для зняття легкого негативу.<br><br>
+                                <strong>Віджиг свічками</strong> — середній рівень, ефективний проти пристрітів та заздрощів.<br><br>
+                                <strong>Чистка свинцем</strong> — найпотужніший метод для важких випадків: родові прокляття, сильна порча.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Скільки часу потрібно на результат?</span>
+                            <div class="faq-icon">
+                                <span class="icon-line"></span>
+                                <span class="icon-line"></span>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Все залежить від складності ситуації. Діагностику ви отримаєте протягом дня.
+                                Ефект від чисток зазвичай відчувається відразу. Ритуали можуть працювати від тижня до місяця.
+                                Я завжди на зв'язку та супроводжую вас протягом всього процесу.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Як відбувається оплата?</span>
+                            <div class="faq-icon">
+                                <span class="icon-line"></span>
+                                <span class="icon-line"></span>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Оплата здійснюється на картку ПриватБанку або Монобанку. Для діагностики — 100% передоплата.
+                                Для інших послуг можлива часткова передоплата (50%) та решта після виконання роботи.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Відгуки</span>
+                <h2 class="section-title">
+                    <span class="title-reveal">Що кажуть клієнти</span>
+                </h2>
+                <p class="section-subtitle">Реальні історії та враження від роботи зі мною</p>
+            </div>
+
+            <div class="reviews-slider-container">
+                <div class="swiper reviewsSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="review-image-wrapper">
+                                    <img src="review1.png" alt="Відгук 1" class="review-image">
+                                    <div class="review-overlay">
+                                        <button class="view-full-btn">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                                            </svg>
+                                            <span>Переглянути</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="review-image-wrapper">
+                                    <img src="review2.png" alt="Відгук 2" class="review-image">
+                                    <div class="review-overlay">
+                                        <button class="view-full-btn">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                                            </svg>
+                                            <span>Переглянути</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="review-image-wrapper">
+                                    <img src="review3.png" alt="Відгук 3" class="review-image">
+                                    <div class="review-overlay">
+                                        <button class="view-full-btn">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                                            </svg>
+                                            <span>Переглянути</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="review-image-wrapper">
+                                    <img src="review4.png" alt="Відгук 4" class="review-image">
+                                    <div class="review-overlay">
+                                        <button class="view-full-btn">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                                            </svg>
+                                            <span>Переглянути</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="review-image-wrapper">
+                                    <img src="review5.png" alt="Відгук 5" class="review-image">
+                                    <div class="review-overlay">
+                                        <button class="view-full-btn">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                                            </svg>
+                                            <span>Переглянути</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <div class="swiper-nav">
+                    <button class="swiper-nav-btn swiper-button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button class="swiper-nav-btn swiper-button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="reviews-cta">
+                <p>Приєднуйтесь до тисяч задоволених клієнтів</p>
+                <a href="#contact" class="btn btn-primary magnetic">
+                    <span class="btn-text">Стати одним з них</span>
+                    <span class="btn-icon">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-label">Контакти</span>
+                    <h2 class="section-title">
+                        <span class="title-reveal">Давайте поговоримо</span>
+                    </h2>
+                    <p class="contact-description">
+                        Готові знайти відповіді на ваші питання? Напишіть мені у зручний месенджер,
+                        і я відповім протягом години.
+                    </p>
+
+                    <div class="messenger-list">
+                        <a href="https://t.me/taroutapockah" class="messenger-item telegram" id="telegramContact">
+                            <div class="messenger-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                                </svg>
+                            </div>
+                            <div class="messenger-content">
+                                <span class="messenger-name">Telegram</span>
+                                <span class="messenger-hint">Найшвидший спосіб</span>
+                            </div>
+                            <div class="messenger-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/380633895103?text=Вітаю!%20Хочу%20замовити%20розклад%20таро." class="messenger-item whatsapp" id="whatsappContact">
+                            <div class="messenger-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                            </div>
+                            <div class="messenger-content">
+                                <span class="messenger-name">WhatsApp</span>
+                                <span class="messenger-hint">Зручно з телефону</span>
+                            </div>
+                            <div class="messenger-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="viber://chat?number=%2B380633895103" class="messenger-item viber" id="viberContact">
+                            <div class="messenger-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.743 13.455s.356.03.547-.206l.374-.47c.18-.232.614-.38 1.04-.144a11.005 11.005 0 0 1 .928.593c.282.207.86.69.862.69.276.233.34.574.152.934l-.002.008a3.896 3.896 0 0 1-.777.957l-.007.005q-.401.335-.789.381a.522.522 0 0 1-.115.008 1.05 1.05 0 0 1-.335-.052l-.009-.012c-.398-.113-1.062-.394-2.169-1.004a12.917 12.917 0 0 1-1.822-1.204 9.553 9.553 0 0 1-.82-.727l-.027-.027-.028-.028-.028-.027-.027-.028a9.553 9.553 0 0 1-.727-.82A12.93 12.93 0 0 1 7.76 10.46c-.61-1.107-.891-1.77-1.004-2.17l-.012-.008a1.05 1.05 0 0 1-.051-.335.506.506 0 0 1 .007-.115q.048-.387.382-.79l.005-.007a3.888 3.888 0 0 1 .957-.777l.007-.001c.36-.188.702-.124.934.15.002.001.484.58.69.862a11.005 11.005 0 0 1 .593.929c.237.425.089.86-.144 1.04l-.47.373c-.237.192-.206.548-.206.548s.696 2.633 3.295 3.296z"/>
+                                    <path d="M19.343 4.95c-.497-.458-2.506-1.916-6.98-1.936 0 0-5.275-.318-7.847 2.041-1.431 1.432-1.935 3.527-1.988 6.125-.053 2.597-.122 7.465 4.57 8.785h.005L7.1 20.98s-.03.815.507.981c.65.202 1.03-.418 1.65-1.086.341-.367.811-.905 1.165-1.317 3.21.27 5.678-.347 5.958-.439.648-.21 4.315-.68 4.91-5.547.616-5.017-.297-8.19-1.947-9.621zm.544 9.262c-.504 4.064-3.478 4.32-4.026 4.496-.233.075-2.401.614-5.127.436 0 0-2.031 2.45-2.666 3.088-.099.1-.215.14-.293.12-.11-.027-.14-.156-.138-.345l.017-3.347c-3.97-1.102-3.738-5.246-3.693-7.415.045-2.17.453-3.947 1.664-5.143C7.8 3.132 12.28 3.426 12.28 3.426c3.784.017 5.598 1.157 6.018 1.538 1.396 1.196 2.108 4.056 1.588 8.247z"/>
+                                </svg>
+                            </div>
+                            <div class="messenger-content">
+                                <span class="messenger-name">Viber</span>
+                                <span class="messenger-hint">Звичний месенджер</span>
+                            </div>
+                            <div class="messenger-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <span class="social-label">Слідкуйте за мною:</span>
+                        <a href="https://www.tiktok.com/@taroutapockah" target="_blank" rel="noopener" class="social-link tiktok">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                            <span>TikTok</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <div class="form-card">
+                        <h3 class="form-title">Або залиште заявку</h3>
+                        <p class="form-subtitle">Я зв'яжуся з вами найближчим часом</p>
+
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Ваше ім'я</label>
+                                <input type="text" id="name" name="name" required placeholder="Як до вас звертатися?">
+                                <span class="input-highlight"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+380">
+                                <span class="input-highlight"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">Послуга</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Оберіть послугу</option>
+                                    <option value="diagnosis">Повна діагностика - 500 грн</option>
+                                    <option value="protection">Захист - 1 500 грн</option>
+                                    <option value="wax">Чистка воском - від 3 000 грн</option>
+                                    <option value="candles">Віджиг свічками - від 3 000 грн</option>
+                                    <option value="lead">Чистка свинцем - від 13 000 грн</option>
+                                    <option value="ritual">Ритуали - від 2 500 грн</option>
+                                </select>
+                                <span class="input-highlight"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Повідомлення (необов'язково)</label>
+                                <textarea id="message" name="message" rows="3" placeholder="Розкажіть про вашу ситуацію..."></textarea>
+                                <span class="input-highlight"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full magnetic">
+                                <span class="btn-text">Відправити заявку</span>
+                                <span class="btn-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </span>
+                                <span class="btn-ripple"></span>
+                            </button>
+
+                            <p class="form-success" id="formSuccess">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Дякую! Я зв'яжуся з вами найближчим часом.</span>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo">
+                        <img src="girl.webp" alt="Таро у Тапочках">
+                        <span>Таро у Тапочках</span>
+                    </a>
+                    <p class="footer-tagline">Затишні розклади таро з турботою про вас</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Навігація</h4>
+                    <ul>
+                        <li><a href="#home">Головна</a></li>
+                        <li><a href="#card-of-day">Карта дня</a></li>
+                        <li><a href="#about">Про мене</a></li>
+                        <li><a href="#services">Послуги</a></li>
+                        <li><a href="#reviews">Відгуки</a></li>
+                        <li><a href="#contact">Контакти</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Соціальні мережі</h4>
+                    <div class="footer-social-links">
+                        <a href="https://t.me/taroutapockah" class="footer-social-btn telegram" id="telegramFooter" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/380633895103?text=Вітаю!%20Хочу%20замовити%20розклад%20таро." class="footer-social-btn whatsapp" id="whatsappFooter" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                        <a href="viber://chat?number=%2B380633895103" class="footer-social-btn viber" id="viberFooter" aria-label="Viber">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.743 13.455s.356.03.547-.206l.374-.47c.18-.232.614-.38 1.04-.144a11.005 11.005 0 0 1 .928.593c.282.207.86.69.862.69.276.233.34.574.152.934l-.002.008a3.896 3.896 0 0 1-.777.957l-.007.005q-.401.335-.789.381a.522.522 0 0 1-.115.008 1.05 1.05 0 0 1-.335-.052l-.009-.012c-.398-.113-1.062-.394-2.169-1.004a12.917 12.917 0 0 1-1.822-1.204 9.553 9.553 0 0 1-.82-.727l-.027-.027-.028-.028-.028-.027-.027-.028a9.553 9.553 0 0 1-.727-.82A12.93 12.93 0 0 1 7.76 10.46c-.61-1.107-.891-1.77-1.004-2.17l-.012-.008a1.05 1.05 0 0 1-.051-.335.506.506 0 0 1 .007-.115q.048-.387.382-.79l.005-.007a3.888 3.888 0 0 1 .957-.777l.007-.001c.36-.188.702-.124.934.15.002.001.484.58.69.862a11.005 11.005 0 0 1 .593.929c.237.425.089.86-.144 1.04l-.47.373c-.237.192-.206.548-.206.548s.696 2.633 3.295 3.296z"/>
+                                <path d="M19.343 4.95c-.497-.458-2.506-1.916-6.98-1.936 0 0-5.275-.318-7.847 2.041-1.431 1.432-1.935 3.527-1.988 6.125-.053 2.597-.122 7.465 4.57 8.785h.005L7.1 20.98s-.03.815.507.981c.65.202 1.03-.418 1.65-1.086.341-.367.811-.905 1.165-1.317 3.21.27 5.678-.347 5.958-.439.648-.21 4.315-.68 4.91-5.547.616-5.017-.297-8.19-1.947-9.621zm.544 9.262c-.504 4.064-3.478 4.32-4.026 4.496-.233.075-2.401.614-5.127.436 0 0-2.031 2.45-2.666 3.088-.099.1-.215.14-.293.12-.11-.027-.14-.156-.138-.345l.017-3.347c-3.97-1.102-3.738-5.246-3.693-7.415.045-2.17.453-3.947 1.664-5.143C7.8 3.132 12.28 3.426 12.28 3.426c3.784.017 5.598 1.157 6.018 1.538 1.396 1.196 2.108 4.056 1.588 8.247z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@taroutapockah" target="_blank" rel="noopener" class="footer-social-btn tiktok" aria-label="TikTok">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Таро у Тапочках. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Повернутись наверх">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Review Modal -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <img src="" alt="Відгук" id="modalImage">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

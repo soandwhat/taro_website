@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Таро у Тапочках - професійна сила таро на службі вашого майбутнього. Містичні розклади, ритуали, захист. Дізнайтесь таємниці долі.">
-    <meta name="keywords" content="таро, розклад таро, ворожіння, чистка, захист, ритуали, містика, професійне таро">
-    <title>Таро у Тапочках | Дізнайтеся своє майбутнє</title>
+    <meta name="description" content="Привіт! Я Альона, практикуюча таролог. Допоможу вам знайти відповіді, розібратися в ситуації та відчути внутрішній спокій.">
+    <meta name="keywords" content="таро, розклад таро, таролог, допомога, підтримка, відповіді на питання">
+    <title>Таро у Тапочках | Я допоможу вам знайти відповіді</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="girl.webp">
@@ -24,11 +24,6 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Three.js for 3D Background -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
-    <!-- Base64 encoded images for CORS-free loading -->
-    <script src="image-data.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -55,28 +50,65 @@
         </div>
     </nav>
 
-    <!-- Three.js Background Container -->
-    <div id="three-container"></div>
-
-    <!-- Hero Section with 3D Background -->
-    <section class="hero hero-3d" id="home">
-        <div class="hero-content-3d">
-            <!-- Header Content -->
-            <div class="hero-header" data-aos="fade-down" data-aos-duration="1000">
-                <h1 class="hero-title-3d">
-                    РОЗКЛАДЕМО<br>ВСЕ ПО ПОЛИЧКАХ
-                </h1>
-                <div class="hero-badge-3d">
-                    <span>🔮 Глибока діагностика долі та енергетична допомога</span>
+    <!-- Hero Section - Personal & Warm -->
+    <section class="hero hero-personal" id="home">
+        <div class="container">
+            <div class="hero-content-personal">
+                <!-- Personal Photo -->
+                <div class="hero-image" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="image-wrapper">
+                        <img src="about_me.webp" alt="Альона - Таро у Тапочках" class="tarot-photo">
+                        <div class="image-decoration"></div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Action Area -->
-            <div class="hero-action" data-aos="fade-up" data-aos-delay="500">
-                <span class="hero-hint">Поводь мишкою або скроль для ефекту</span>
-                <a href="#contact" class="btn btn-primary btn-glow btn-hero">
-                    <span>Дізнатися своє майбутнє</span>
-                </a>
+                <!-- Personal Message -->
+                <div class="hero-text" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="greeting-badge">
+                        <span>👋 Привіт!</span>
+                    </div>
+                    <h1 class="hero-title-personal">
+                        Я Альона,<br>
+                        <span class="highlight-text">ваш провідник</span> у світі Таро
+                    </h1>
+                    <p class="hero-subtitle">
+                        Знаю, як буває важко, коли потрібні відповіді, а їх немає.
+                        Коли душа шукає спокою, а голова — ясності.
+                        <strong>Я тут, щоб допомогти вам розібратися.</strong>
+                    </p>
+                    <div class="hero-benefits">
+                        <div class="benefit-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>Без страшних прогнозів та містики</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>З турботою та розумінням вашої ситуації</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>Завжди на зв'язку та підтримаю вас</span>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary btn-warm">
+                            <span>Напишіть мені</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </a>
+                        <p class="cta-note">Відповім протягом години</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -109,188 +141,197 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- About Section - Personal Story -->
+    <section class="about about-story" id="about">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-badge">Про мене</span>
-                <h2 class="section-title">Ваш провідник у світі Таро</h2>
-                <p class="section-subtitle">Де містика зустрічається з домашнім затишком</p>
+                <span class="section-badge">Моя історія</span>
+                <h2 class="section-title">Чому я займаюся Таро</h2>
+                <p class="section-subtitle">І як я можу допомогти саме вам</p>
             </div>
 
-            <div class="about-content">
-                <!-- Фото про мене -->
-                <div class="about-visual" data-aos="fade-right">
-                    <div class="mystical-aura"></div>
-                    <div class="about-photo-wrapper">
-                        <div class="photo-frame">
-                            <img src="about_me.webp" alt="Таролог" class="about-photo">
-                        </div>
-                        <div class="photo-decoration photo-decoration-1"></div>
-                        <div class="photo-decoration photo-decoration-2"></div>
-                    </div>
-                </div>
-
-                <div class="about-text" data-aos="fade-left">
-                    <p class="about-intro">
-                        Вітаю! Я практикуюча таролог з багаторічним досвідом роботи з картами.
-                        Мій канал "Таро у Тапочках" народився з бажання зробити таро доступним і зрозумілим для кожного.
+            <div class="story-content" data-aos="fade-up" data-aos-delay="200">
+                <div class="story-text">
+                    <p class="story-paragraph">
+                        <strong>10 років тому</strong> я сама сиділа там, де зараз ви — шукала відповіді,
+                        потребувала підказки, хотіла розуміти, що відбувається в моєму житті.
                     </p>
 
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">🏠</div>
-                            <div class="feature-content">
-                                <h4>Домашня атмосфера</h4>
-                                <p>Розклади в затишній обстановці без зайвої містики та страху</p>
+                    <p class="story-paragraph">
+                        Перший розклад, який я зробила собі, відкрив мені очі на те, що картка Таро —
+                        це не магічний інструмент для передбачення майбутнього. <strong>Це дзеркало</strong>,
+                        яке показує те, що ми часто не хочемо бачити або не можемо зрозуміти самі.
+                    </p>
+
+                    <p class="story-paragraph">
+                        За ці роки я допомогла тисячам людей знайти їхні відповіді. Хтось шукав любов,
+                        хтось — спокій у душі, хтось просто хотів зрозуміти, чому все складається саме так.
+                    </p>
+
+                    <div class="values-box">
+                        <h3 class="values-title">Що для мене найважливіше у роботі:</h3>
+                        <div class="values-list">
+                            <div class="value-item">
+                                <span class="value-emoji">💝</span>
+                                <div>
+                                    <h4>Ваш спокій</h4>
+                                    <p>Не буду лякати "страшними прогнозами". Моє завдання — дати вам ясність і підтримку</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">🎯</div>
-                            <div class="feature-content">
-                                <h4>Індивідуальний підхід</h4>
-                                <p>Кожен розклад унікальний та враховує вашу особисту ситуацію</p>
+                            <div class="value-item">
+                                <span class="value-emoji">🤝</span>
+                                <div>
+                                    <h4>Щирість</h4>
+                                    <p>Скажу те, що показують карти, але завжди з турботою та розумінням</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">💎</div>
-                            <div class="feature-content">
-                                <h4>Професіоналізм</h4>
-                                <p>Повне знання практик Таро та енергетичних робіт</p>
+                            <div class="value-item">
+                                <span class="value-emoji">🌸</span>
+                                <div>
+                                    <h4>Підтримка</h4>
+                                    <p>Я не зникну після розкладу. Завжди можете написати з питаннями</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <blockquote class="about-quote">
-                        "Я вірю, що розклад таро — це не магія, а інструмент самопізнання.
-                        Моє завдання — допомогти вам знайти відповіді, які вже є всередині вас."
-                    </blockquote>
-
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Записатися на консультацію</span>
-                    </a>
+                    <div class="personal-message">
+                        <div class="message-icon">💌</div>
+                        <p>
+                            Якщо вам важко, якщо потрібні відповіді, якщо просто хочеться поговорити —
+                            <strong>я тут.</strong> Я розумію, що ви відчуваєте, бо сама проходила через це.
+                            Давайте разом знайдемо ваші відповіді.
+                        </p>
+                        <p class="signature">З теплом, Альона 🌿</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- Services Section - How I Can Help -->
+    <section class="services services-help" id="services">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-badge">Послуги</span>
-                <h2 class="section-title">Що я пропоную</h2>
-                <p class="section-subtitle">Професійні практики для вашого благополуччя</p>
+                <span class="section-badge">Чим я можу допомогти</span>
+                <h2 class="section-title">Я допоможу вам знайти відповіді</h2>
+                <p class="section-subtitle">Оберіть те, що вам потрібно зараз</p>
             </div>
 
             <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card help-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon">🎴</div>
-                    <h3 class="service-title">Повна діагностика</h3>
-                    <p class="service-description">
-                        Детальний аналіз вашої поточної ситуації, виявлення блоків та можливостей для росту
+                    <h3 class="service-title">Розклад Таро</h3>
+                    <p class="service-description-help">
+                        <strong>Коли не знаєте, як діяти далі?</strong><br>
+                        Я допоможу побачити ситуацію з нового боку, зрозуміти, що відбувається,
+                        і отримати чіткі відповіді на ваші питання.
                     </p>
                     <div class="service-price">
                         <span class="price-amount">500</span>
                         <span class="price-currency">грн</span>
                     </div>
-                    <ul class="service-features">
-                        <li>✓ Аналіз поточної ситуації</li>
-                        <li>✓ Виявлення блоків</li>
-                        <li>✓ Рекомендації</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">Замовити</a>
+                    <div class="service-result">
+                        <span class="result-label">Що ви отримаєте:</span>
+                        <p>Ясність у ситуації, розуміння наступних кроків і спокій у душі</p>
+                    </div>
+                    <a href="#contact" class="btn btn-secondary">Написати мені</a>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card help-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">🛡️</div>
-                    <h3 class="service-title">Захист</h3>
-                    <p class="service-description">
-                        Енергетичний захист від негативу, заздрощів та недоброзичливості
+                    <h3 class="service-title">Енергетичний захист</h3>
+                    <p class="service-description-help">
+                        <strong>Відчуваєте, що хтось "тягне" вашу енергію?</strong><br>
+                        Я поставлю вам захист, який допоможе відновити сили та відчути себе
+                        в безпеці від чужого негативу.
                     </p>
                     <div class="service-price">
                         <span class="price-amount">1 500</span>
                         <span class="price-currency">грн</span>
                     </div>
-                    <ul class="service-features">
-                        <li>✓ Енергетичний щит</li>
-                        <li>✓ Захист від негативу</li>
-                        <li>✓ Усунення впливу</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">Замовити</a>
+                    <div class="service-result">
+                        <span class="result-label">Що ви відчуєте:</span>
+                        <p>Легкість, спокій, впевненість і захищеність у будь-якій ситуації</p>
+                    </div>
+                    <a href="#contact" class="btn btn-secondary">Написати мені</a>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card help-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon">🕯️</div>
                     <h3 class="service-title">Чистка воском</h3>
-                    <p class="service-description">
-                        Глибоке очищення енергетики, зняття негативних програм та блоків
+                    <p class="service-description-help">
+                        <strong>Все валиться з рук, немає сил?</strong><br>
+                        Я проведу м'яку чистку, яка зніме легкий негатив і допоможе вам
+                        відчути прилив енергії та радість життя.
                     </p>
                     <div class="service-price">
                         <span class="price-amount">від 3 000</span>
                         <span class="price-currency">грн</span>
                     </div>
-                    <ul class="service-features">
-                        <li>✓ Глибока чистка</li>
-                        <li>✓ Зняття програм</li>
-                        <li>✓ Відновлення енергії</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">Замовити</a>
+                    <div class="service-result">
+                        <span class="result-label">Що ви відчуєте:</span>
+                        <p>Легкість у тілі, ясність розуму, повернення сил і радості</p>
+                    </div>
+                    <a href="#contact" class="btn btn-secondary">Написати мені</a>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card help-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon">🔥</div>
                     <h3 class="service-title">Віджиг свічками</h3>
-                    <p class="service-description">
-                        Потужна практика очищення та відновлення енергетичного балансу
+                    <p class="service-description-help">
+                        <strong>Відчуваєте заздрість навколо?</strong><br>
+                        Я проведу потужну чистку, яка зніме пристріти, заздрість
+                        і поверне вам гармонію та баланс.
                     </p>
                     <div class="service-price">
                         <span class="price-amount">від 3 000</span>
                         <span class="price-currency">грн</span>
                     </div>
-                    <ul class="service-features">
-                        <li>✓ Потужне очищення</li>
-                        <li>✓ Баланс енергії</li>
-                        <li>✓ Відновлення сил</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">Замовити</a>
+                    <div class="service-result">
+                        <span class="result-label">Що ви відчуєте:</span>
+                        <p>Звільнення від важкості, відновлення енергії, внутрішній баланс</p>
+                    </div>
+                    <a href="#contact" class="btn btn-secondary">Написати мені</a>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card help-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">⚗️</div>
                     <h3 class="service-title">Чистка свинцем</h3>
-                    <p class="service-description">
-                        Найглибша очистка від важких енергетичних забруднень та впливів
+                    <p class="service-description-help">
+                        <strong>Важкі проблеми, що повторюються?</strong><br>
+                        Я проведу найглибшу чистку для складних випадків — родові програми,
+                        сильні впливи, хронічні енергетичні проблеми.
                     </p>
                     <div class="service-price">
                         <span class="price-amount">від 13 000</span>
                         <span class="price-currency">грн</span>
                     </div>
-                    <ul class="service-features">
-                        <li>✓ Максимальна чистка</li>
-                        <li>✓ Важкі впливи</li>
-                        <li>✓ Повне відновлення</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">Замовити</a>
+                    <div class="service-result">
+                        <span class="result-label">Що ви відчуєте:</span>
+                        <p>Повне звільнення, початок нового життя, розрив важких ланцюгів</p>
+                    </div>
+                    <a href="#contact" class="btn btn-secondary">Написати мені</a>
                 </div>
 
-                <div class="service-card featured" data-aos="fade-up" data-aos-delay="300">
-                    <div class="featured-badge">Популярне</div>
+                <div class="service-card help-card featured" data-aos="fade-up" data-aos-delay="300">
+                    <div class="featured-badge">Допоможе втілити мрію</div>
                     <div class="service-icon">✨</div>
-                    <h3 class="service-title">Ритуали</h3>
-                    <p class="service-description">
-                        Індивідуальні ритуали на різні цілі: любов, достаток, здоров'я, успіх у справах
+                    <h3 class="service-title">Індивідуальні ритуали</h3>
+                    <p class="service-description-help">
+                        <strong>Маєте мрію чи важливу ціль?</strong><br>
+                        Я створю персональний ритуал саме для вас — на любов, достаток,
+                        здоров'я чи успіх. Допоможу втілити те, про що ви мрієте.
                     </p>
                     <div class="service-price">
                         <span class="price-amount">від 2 500</span>
                         <span class="price-currency">грн</span>
                     </div>
-                    <ul class="service-features">
-                        <li>✓ Індивідуальний підхід</li>
-                        <li>✓ Будь-яка мета</li>
-                        <li>✓ Потужний результат</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Замовити</a>
+                    <div class="service-result">
+                        <span class="result-label">Що ви відчуєте:</span>
+                        <p>Наближення до мрії, відчуття підтримки Всесвіту, віру в себе</p>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Написати мені</a>
                 </div>
             </div>
         </div>
@@ -424,8 +465,8 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-badge">Відгуки</span>
-                <h2 class="section-title">Що кажуть клієнти</h2>
-                <p class="section-subtitle">Реальні історії та враження від роботи зі мною</p>
+                <h2 class="section-title">Вони теж шукали відповіді</h2>
+                <p class="section-subtitle">І знайшли їх. Ось що вони розповідають про свій досвід</p>
             </div>
 
             <div class="reviews-slider-container" data-aos="fade-up" data-aos-delay="200">
@@ -489,12 +530,12 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact contact-warm" id="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Контакти</span>
-                <h2 class="section-title">Замовити розклад</h2>
-                <p class="section-subtitle">Заповніть форму, і я зв'яжуся з вами найближчим часом</p>
+                <span class="section-badge">Напишіть мені</span>
+                <h2 class="section-title">Давайте знайдемо ваші відповіді разом</h2>
+                <p class="section-subtitle">Я завжди на зв'язку і готова вам допомогти. Напишіть — і я відповім протягом години 💝</p>
             </div>
 
             <div class="contact-content">
@@ -570,19 +611,19 @@
                         <h3>Зв'яжіться напряму</h3>
                         <p>Оберіть зручний для вас месенджер</p>
                         <div class="messenger-buttons">
-                            <a href="#" class="messenger-btn telegram" id="telegramContact">
+                            <a href="https://t.me/taroutapockah" class="messenger-btn telegram" id="telegramContact">
                                 <svg viewBox="0 0 24 24" width="24" height="24">
                                     <path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                                 </svg>
                                 <span>Telegram</span>
                             </a>
-                            <a href="#" class="messenger-btn whatsapp" id="whatsappContact">
+                            <a href="https://wa.me/380633895103?text=Вітаю!%20Хочу%20замовити%20розклад%20таро." class="messenger-btn whatsapp" id="whatsappContact">
                                 <svg viewBox="0 0 24 24" width="24" height="24">
                                     <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                                 </svg>
                                 <span>WhatsApp</span>
                             </a>
-                            <a href="#" class="messenger-btn viber" id="viberContact">
+                            <a href="viber://chat?number=%2B380633895103" class="messenger-btn viber" id="viberContact">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12.743 13.455s.356.03.547-.206l.374-.47c.18-.232.614-.38 1.04-.144a11.005 11.005 0 0 1 .928.593c.282.207.86.69.862.69.276.233.34.574.152.934l-.002.008a3.896 3.896 0 0 1-.777.957l-.007.005q-.401.335-.789.381a.522.522 0 0 1-.115.008 1.05 1.05 0 0 1-.335-.052l-.009-.012c-.398-.113-1.062-.394-2.169-1.004a12.917 12.917 0 0 1-1.822-1.204 9.553 9.553 0 0 1-.82-.727l-.027-.027-.028-.028-.028-.027-.027-.028a9.553 9.553 0 0 1-.727-.82A12.93 12.93 0 0 1 7.76 10.46c-.61-1.107-.891-1.77-1.004-2.17l-.012-.008a1.05 1.05 0 0 1-.051-.335.506.506 0 0 1 .007-.115q.048-.387.382-.79l.005-.007a3.888 3.888 0 0 1 .957-.777l.007-.001c.36-.188.702-.124.934.15.002.001.484.58.69.862a11.005 11.005 0 0 1 .593.929c.237.425.089.86-.144 1.04l-.47.373c-.237.192-.206.548-.206.548s.696 2.633 3.295 3.296zm-.878-7.875a.253.253 0 0 0-.256.252.253.253 0 0 0 .252.254c1.353.01 2.454.447 3.356 1.326.894.872 1.351 2.057 1.363 3.611a.253.253 0 0 0 .254.252.253.253 0 0 0 .252-.255c-.013-1.654-.517-2.996-1.516-3.97-.99-.965-2.242-1.46-3.705-1.47Zm.463 1.313a.253.253 0 0 0-.271.234.253.253 0 0 0 .234.271c.966.071 1.682.387 2.205.957.524.573.773 1.27.754 2.141a.253.253 0 0 0 .248.258.253.253 0 0 0 .258-.246c.021-.978-.276-1.827-.887-2.494-.617-.674-1.48-1.044-2.54-1.121Zm.379 1.357a.253.253 0 0 0-.266.24.253.253 0 0 0 .239.266c.436.023.73.146.93.351.198.206.32.516.343.971a.253.253 0 0 0 .264.24.253.253 0 0 0 .24-.263c-.027-.537-.18-.984-.484-1.3-.305-.314-.743-.478-1.266-.505Zm6.636-4.3c-.497-.458-2.506-1.916-6.98-1.936 0 0-5.275-.318-7.847 2.041-1.431 1.432-1.935 3.527-1.988 6.125-.053 2.597-.122 7.465 4.57 8.785h.005L7.1 20.98s-.03.815.507.981c.65.202 1.03-.418 1.65-1.086.341-.367.811-.905 1.165-1.317 3.21.27 5.678-.347 5.958-.439.648-.21 4.315-.68 4.91-5.547.616-5.017-.297-8.19-1.947-9.621Zm.544 9.262c-.504 4.064-3.478 4.32-4.026 4.496-.233.075-2.401.614-5.127.436 0 0-2.031 2.45-2.666 3.088-.099.1-.215.14-.293.12-.11-.027-.14-.156-.138-.345l.017-3.347s-.002 0 0 0c-3.97-1.102-3.738-5.246-3.693-7.415.045-2.17.453-3.947 1.664-5.143C7.8 3.132 12.28 3.426 12.28 3.426c3.784.017 5.598 1.157 6.018 1.538 1.396 1.196 2.108 4.056 1.588 8.247z"/>
                                 </svg>
@@ -630,17 +671,17 @@
                 <div class="footer-social">
                     <h4>Соціальні мережі</h4>
                     <div class="footer-social-links">
-                        <a href="#" class="footer-social-btn telegram" id="telegramFooter" aria-label="Telegram">
+                        <a href="https://t.me/taroutapockah" class="footer-social-btn telegram" id="telegramFooter" aria-label="Telegram">
                             <svg viewBox="0 0 24 24" width="20" height="20">
                                 <path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                             </svg>
                         </a>
-                        <a href="#" class="footer-social-btn whatsapp" id="whatsappFooter" aria-label="WhatsApp">
+                        <a href="https://wa.me/380633895103?text=Вітаю!%20Хочу%20замовити%20розклад%20таро." class="footer-social-btn whatsapp" id="whatsappFooter" aria-label="WhatsApp">
                             <svg viewBox="0 0 24 24" width="20" height="20">
                                 <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                             </svg>
                         </a>
-                        <a href="#" class="footer-social-btn viber" id="viberFooter" aria-label="Viber">
+                        <a href="viber://chat?number=%2B380633895103" class="footer-social-btn viber" id="viberFooter" aria-label="Viber">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12.743 13.455s.356.03.547-.206l.374-.47c.18-.232.614-.38 1.04-.144a11.005 11.005 0 0 1 .928.593c.282.207.86.69.862.69.276.233.34.574.152.934l-.002.008a3.896 3.896 0 0 1-.777.957l-.007.005q-.401.335-.789.381a.522.522 0 0 1-.115.008 1.05 1.05 0 0 1-.335-.052l-.009-.012c-.398-.113-1.062-.394-2.169-1.004a12.917 12.917 0 0 1-1.822-1.204 9.553 9.553 0 0 1-.82-.727l-.027-.027-.028-.028-.028-.027-.027-.028a9.553 9.553 0 0 1-.727-.82A12.93 12.93 0 0 1 7.76 10.46c-.61-1.107-.891-1.77-1.004-2.17l-.012-.008a1.05 1.05 0 0 1-.051-.335.506.506 0 0 1 .007-.115q.048-.387.382-.79l.005-.007a3.888 3.888 0 0 1 .957-.777l.007-.001c.36-.188.702-.124.934.15.002.001.484.58.69.862a11.005 11.005 0 0 1 .593.929c.237.425.089.86-.144 1.04l-.47.373c-.237.192-.206.548-.206.548s.696 2.633 3.295 3.296zm-.878-7.875a.253.253 0 0 0-.256.252.253.253 0 0 0 .252.254c1.353.01 2.454.447 3.356 1.326.894.872 1.351 2.057 1.363 3.611a.253.253 0 0 0 .254.252.253.253 0 0 0 .252-.255c-.013-1.654-.517-2.996-1.516-3.97-.99-.965-2.242-1.46-3.705-1.47Zm.463 1.313a.253.253 0 0 0-.271.234.253.253 0 0 0 .234.271c.966.071 1.682.387 2.205.957.524.573.773 1.27.754 2.141a.253.253 0 0 0 .248.258.253.253 0 0 0 .258-.246c.021-.978-.276-1.827-.887-2.494-.617-.674-1.48-1.044-2.54-1.121Zm.379 1.357a.253.253 0 0 0-.266.24.253.253 0 0 0 .239.266c.436.023.73.146.93.351.198.206.32.516.343.971a.253.253 0 0 0 .264.24.253.253 0 0 0 .24-.263c-.027-.537-.18-.984-.484-1.3-.305-.314-.743-.478-1.266-.505Zm6.636-4.3c-.497-.458-2.506-1.916-6.98-1.936 0 0-5.275-.318-7.847 2.041-1.431 1.432-1.935 3.527-1.988 6.125-.053 2.597-.122 7.465 4.57 8.785h.005L7.1 20.98s-.03.815.507.981c.65.202 1.03-.418 1.65-1.086.341-.367.811-.905 1.165-1.317 3.21.27 5.678-.347 5.958-.439.648-.21 4.315-.68 4.91-5.547.616-5.017-.297-8.19-1.947-9.621Zm.544 9.262c-.504 4.064-3.478 4.32-4.026 4.496-.233.075-2.401.614-5.127.436 0 0-2.031 2.45-2.666 3.088-.099.1-.215.14-.293.12-.11-.027-.14-.156-.138-.345l.017-3.347s-.002 0 0 0c-3.97-1.102-3.738-5.246-3.693-7.415.045-2.17.453-3.947 1.664-5.143C7.8 3.132 12.28 3.426 12.28 3.426c3.784.017 5.598 1.157 6.018 1.538 1.396 1.196 2.108 4.056 1.588 8.247z"/>
                             </svg>
@@ -684,9 +725,6 @@
     <!-- Libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Three.js Background -->
-    <script src="three-background.js"></script>
 
     <!-- Custom Script -->
     <script src="script.js"></script>

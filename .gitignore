@@ -26,11 +26,25 @@ npm-debug.log*
 dist/
 build/
 
-# Environment variables (if added later)
+# Environment variables & Configuration
 .env
 .env.local
 .env.*.local
+config.php
+config.js
+
+# Sensitive files with personal data
+send-form.php
+
+# Archives
+*.rar
+*.zip
+*.tar.gz
+*.7z
 
 # Backup files
 *.bak
 *.backup
+
+# Local development notes
+NOTES.md

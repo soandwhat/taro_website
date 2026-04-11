@@ -6,8 +6,23 @@
 - Desktop версія: `landing-1/desktop/`
 - Mobile версія: `landing-1/mobile/`
 
-⏳ **Landing 2** - В очікуванні
-⏳ **Landing 3** - В очікуванні
+✅ **Landing 2** (Містичний професіонал) - **ГОТОВИЙ**
+- Desktop версія: `landing-2/desktop/`
+- Mobile версія: `landing-2/mobile/`
+
+⏳ **Landing 3** - В розробці
+
+---
+
+## 🔒 ВАЖЛИВО: Безпека та конфігурація
+
+**НІКОЛИ не комітьте в GitHub:**
+- `config.php` - містить email та чутливі дані
+- `config.js` - містить токени, ID пікселів та контакти
+- `send-form.php` - містить особисті контакти
+- Архіви (*.rar, *.zip)
+
+Ці файли вже додані в `.gitignore` та не потраплять в репозиторій.
 
 ---
 
@@ -15,7 +30,48 @@
 
 ### 1. Налаштування конфігурації
 
-**ВАЖЛИВО:** Перш ніж запускати лендінг, потрібно замінити контактні дані у файлах JavaScript.
+**ВАЖЛИВО:** Перш ніж запускати лендінг, потрібно налаштувати конфігураційні файли.
+
+#### Створіть config.php
+
+```bash
+cp config.example.php config.php
+```
+
+Відредагуйте `config.php` та вставте реальні дані:
+```php
+return [
+    'to_email' => 'taroutapockah@gmail.com',  // Ваш email
+    'from_name' => 'Таро у Тапочках',
+    'from_email' => 'no-reply@yourdomain.com',
+    'subject' => 'Нова заявка з сайту Таро у Тапочках',
+];
+```
+
+#### Створіть config.js
+
+```bash
+cp config.example.js config.js
+```
+
+Відредагуйте `config.js` та вставте реальні дані:
+```javascript
+const CONFIG = {
+    telegram: 'taroutapockah',
+    whatsapp: '380633895103',
+    viber: '380633895103',
+    tiktok_pixel_id: 'D774RBJC77U74DQSC2P0',
+    // ... інші налаштування
+};
+```
+
+#### Підключіть конфігурацію в HTML
+
+Додайте в `<head>` кожного HTML файлу (перед основним скриптом):
+
+```html
+<script src="../../config.js"></script>
+```
 
 #### Відкрийте файли:
 - `landing-1/desktop/script.js`
